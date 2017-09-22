@@ -45,7 +45,7 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor{" +
+        return "ActorDao{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
