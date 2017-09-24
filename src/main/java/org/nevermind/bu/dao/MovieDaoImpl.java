@@ -40,7 +40,9 @@ public class MovieDaoImpl implements MovieDao {
 
     @Override
     public void delete(int id) {
-
+        entityManager.createQuery("DELETE Movie WHERE id=:id")
+                .setParameter("id", id).
+                executeUpdate();
     }
 
     @Override

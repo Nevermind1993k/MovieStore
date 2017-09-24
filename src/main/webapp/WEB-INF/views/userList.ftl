@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>UserData</title>
+    <style>
+        form { display: inline; }
+    </style>
 </head>
+
 <body class="container">
 <#include "templates/header.ftl">
-<div class="table-responsive" style="background-color: aqua">
+<div class="table-responsive">
     <caption>Users list</caption>
     <table class="table table-striped">
         <tr>
@@ -22,13 +26,13 @@
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.age}</td>
-            <td><a href="/delete/${user.id}">Delete</a>
-                <a href="/edit/${user.id}">Edit</a>
+            <td><form action="/delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
+                <form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
             </td>
         </tr>
     </#list>
     </table>
 </div>
-<#--<#include "templates/createUserForm.ftl"/>-->
+<#include "templates/createUserForm.ftl"/>
 </body>
 </html>

@@ -34,8 +34,10 @@
             <td>Id</td>
             <td>Name</a></td>
             <td>Price</a></td>
+            <td>Year</td>
+            <td>Genre</td>
         </tr>
-    <#list user.moviesList as movie>
+    <#list user.movieList as movie>
         <tr>
             <td>${movie.id}</td>
             <td>${movie.name}</td>
