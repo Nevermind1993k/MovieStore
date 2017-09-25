@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,7 @@
 <#include "templates/header.ftl">
 
 <form action="/editUser" method="post" name="user" class="form-group">
+    <input title="Id" type="number" name="id" value="${user.id}"/>
     <input title="Name" type="text" name="name" value="${user.name}"/>
     <input title="Email" type="text" name="email" value="${user.email}"/>
     <input title="Age" type="number" name="age" value="${user.age}"/>

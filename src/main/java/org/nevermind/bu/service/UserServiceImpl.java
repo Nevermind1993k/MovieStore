@@ -1,6 +1,7 @@
 package org.nevermind.bu.service;
 
 import org.nevermind.bu.dao.UserDao;
+import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,4 +36,11 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
         userDao.update(user);
     }
+
+    @Override
+    public void addMovie(Movie movie) {
+        userDao.addMovieToUser(movie);
+    }
+
+
 }

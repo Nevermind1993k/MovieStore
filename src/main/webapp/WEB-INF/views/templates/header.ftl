@@ -15,6 +15,7 @@
         <ul class="nav navbar-nav navbar-left">
             <li class="active"><a href="/users">Users</a></li>
             <li class="active"><a href="/movies">Movies</a></li>
+            <li class="active"><a href="/actors">Actors</a></li>
         </ul>
     </div>
 </nav>

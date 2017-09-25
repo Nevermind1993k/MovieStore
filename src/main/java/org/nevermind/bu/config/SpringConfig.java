@@ -1,13 +1,7 @@
 package org.nevermind.bu.config;
 
-import org.nevermind.bu.dao.MovieDao;
-import org.nevermind.bu.dao.MovieDaoImpl;
-import org.nevermind.bu.dao.UserDao;
-import org.nevermind.bu.dao.UserDaoImpl;
-import org.nevermind.bu.service.MovieService;
-import org.nevermind.bu.service.MovieServiceImpl;
-import org.nevermind.bu.service.UserService;
-import org.nevermind.bu.service.UserServiceImpl;
+import org.nevermind.bu.dao.*;
+import org.nevermind.bu.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -32,5 +26,15 @@ public class SpringConfig {
     @Bean
     public MovieDao getMovieDao() {
         return new MovieDaoImpl();
+    }
+
+    @Bean
+    public ActorService getActorService() {
+        return new ActorServiceImpl();
+    }
+
+    @Bean
+    public ActorDao getActorDao() {
+        return new ActorDaoImpl();
     }
 }

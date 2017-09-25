@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UserData</title>
+    <title>MovieData</title>
 </head>
 <body class="container">
 <#include "templates/header.ftl">
@@ -17,19 +17,16 @@
             <td>Name</td>
             <td>${movie.name}</td>
         </tr>
-        <td>Genre</td>
-        <td>${movie.genre}</td>
-        </tr>
         <tr>
-            <td>Year</td>
-            <td>${movie.year}</td>
+            <td>Genre</td>
+            <td>${movie.genre}</td>
         </tr>
-        <tr>
-            <td>Price</td>
-            <td>${movie.price}</td>
+        <td>Year</td>
+        <td>${movie.year}</td>
         </tr>
     </table>
 </div>
+
 <a type="button" href="/movies" class="button">Back</a>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package org.nevermind.bu.controller;
 
+import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.nevermind.bu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class UserController {
         return "editUser";
     }
 
-    @PostMapping("editUser")
+    @PostMapping("/editUser")
     public String editUser(@ModelAttribute User user, Model model) {
         userService.update(user);
         return "redirect:edit/" + user.getId();
@@ -56,6 +57,11 @@ public class UserController {
         return "redirect:/users";
     }
 
+    @PostMapping("/addMovieToUser")
+    public String addMovieToUser(@ModelAttribute User user, Movie movie) {
+        userService.addMovie(movie);
+        return "redirect:/user/" + user.getId();
+    }
 
 
 }

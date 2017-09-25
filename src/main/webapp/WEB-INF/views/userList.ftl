@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>UserData</title>
     <style>
-        form { display: inline; }
+        form {
+            display: inline;
+        }
     </style>
 </head>
 
@@ -26,8 +28,8 @@
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.age}</td>
-            <td><form action="/delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
-                <form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
+            <td><form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
+                <form action="/delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
             </td>
         </tr>
     </#list>

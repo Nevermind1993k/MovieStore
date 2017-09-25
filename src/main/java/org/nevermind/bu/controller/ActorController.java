@@ -1,8 +1,8 @@
 package org.nevermind.bu.controller;
 
+import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
-import org.nevermind.bu.entity.User;
-import org.nevermind.bu.service.MovieService;
+import org.nevermind.bu.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,27 +10,27 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/")
-public class MovieController {
+public class ActorController {
 
     @Autowired
-    private MovieService movieService;
+    private ActorService actorService;
 
-    @GetMapping("/movie/{id}")
-    public String getMovieById(@PathVariable("id") int id, Model model) {
-        model.addAttribute("movie", movieService.getById(id));
-        return "showMovie";
+    @GetMapping("/actor/{id}")
+    public String getActorById(@PathVariable("id") int id, Model model) {
+        model.addAttribute("actor", actorService.getById(id));
+        return "showActor";
     }
 
-    @GetMapping("/movies")
-    public String getAllMovies(Model model) {
-        model.addAttribute("movies", movieService.getAll());
-        return "movieList";
+    @GetMapping("/actors")
+    public String getAllActors(Model model) {
+        model.addAttribute("actors", actorService.getAll());
+        return "actorList";
     }
 
-    @PostMapping("/newMovie")
-    public String createMovie(@ModelAttribute Movie movie) {
-        movieService.save(movie);
-        return "redirect:movies";
+    @PostMapping("/newActor")
+    public String createActor(@ModelAttribute Actor actor) {
+        actorService.save(actor);
+        return "redirect:actors";
     }
 
     /*@GetMapping("/edit/{id}")
@@ -51,5 +51,6 @@ public class MovieController {
         movieService.delete(id);
         return "redirect:/movies";
     }*/
+
 
 }

@@ -1,21 +1,22 @@
 package org.nevermind.bu.service;
 
+import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface ActorService {
 
-    User getById(int id);
+    Actor getById(int id);
 
-    List<User> getAll();
+    List<Actor> getAll();
 
-    void save(User user);
+    void save(Actor actor);
 
     void delete(int id);
 
-    void update(User user);
+    void update(Actor actor);
 
     void addMovie(Movie movie);
 }

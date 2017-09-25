@@ -1,5 +1,6 @@
 package org.nevermind.bu.dao;
 
+import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface UserDao {
     void delete(int id);
 
     void delete(String name);
+
+    void addMovieToUser(Movie movie);
 }

@@ -1,12 +1,19 @@
 package org.nevermind.bu.entity;
 
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
+@Entity
+@Table(name = "actor")
 public class Actor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private Date dateOfBirth;
-    private int movieId;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Movie> movieList;
 
     public Actor() {
     }
@@ -35,12 +42,12 @@ public class Actor {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getMovieId() {
-        return movieId;
+    public List<Movie> getMovieList() {
+        return movieList;
     }
 
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
+    public void setMovieList(List<Movie> movieList) {
+        this.movieList = movieList;
     }
 
     @Override
@@ -49,7 +56,6 @@ public class Actor {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", movieId=" + movieId +
                 '}';
     }
 }

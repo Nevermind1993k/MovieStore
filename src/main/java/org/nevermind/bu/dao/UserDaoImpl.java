@@ -1,5 +1,6 @@
 package org.nevermind.bu.dao;
 
+import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,5 +49,13 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(String name) {
 
+    }
+
+    @Override
+    public void addMovieToUser(Movie movie) {
+//        entityManager.createQuery("");
+//        "select c from Category c join fetch c.events where c.parentCategory.categoryId = 1"
+//        user.addMovieToList(movie);
+        entityManager.merge(movie);
     }
 }

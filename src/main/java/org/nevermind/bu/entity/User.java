@@ -59,6 +59,10 @@ public class User {
         this.movieList = movieList;
     }
 
+    public void addMovieToList(Movie movie) {
+        this.movieList.add(movie);
+    }
+
     @Override
     public String toString() {
         return "User{" +
