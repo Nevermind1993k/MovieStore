@@ -10,7 +10,7 @@
     </style>
 </head>
 
-<body class="container" style="background-color: grey">
+<body class="container" style="background-color: lightgrey">
 <#include "templates/header.ftl">
 <div class="table-responsive">
     <caption>Directors list</caption>

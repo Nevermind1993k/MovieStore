@@ -5,7 +5,7 @@
     <title>MovieStore</title>
 </head>
 
-<body class="container" style="background-color: grey">
+<body class="container" style="background-color: lightgrey">
 <#include "WEB-INF/views/templates/header.ftl">
 <div class="container">
     <h1>Welcome to Movie Store!!!</h1>
