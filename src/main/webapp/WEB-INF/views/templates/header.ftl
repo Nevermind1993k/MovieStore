@@ -16,6 +16,7 @@
             <li class="active"><a href="/users">Users</a></li>
             <li class="active"><a href="/movies">Movies</a></li>
             <li class="active"><a href="/actors">Actors</a></li>
+            <li class="active"><a href="/directors">Directors</a></li>
         </ul>
     </div>
 </nav>

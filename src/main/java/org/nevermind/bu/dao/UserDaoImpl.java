@@ -52,6 +52,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    @Transactional
     public void addMovieToUser(Movie movie) {
 //        entityManager.createQuery("");
 //        "select c from Category c join fetch c.events where c.parentCategory.categoryId = 1"

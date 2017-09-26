@@ -37,4 +37,14 @@ public class SpringConfig {
     public ActorDao getActorDao() {
         return new ActorDaoImpl();
     }
+
+    @Bean
+    public DirectorService getDirectorService() {
+        return new DirectorServiceImpl();
+    }
+
+    @Bean
+    public DirectorDao getDirectorDao() {
+        return new DirectorDaoImpl();
+    }
 }

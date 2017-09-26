@@ -33,7 +33,7 @@
             <td>Year</td>
             <td>Genre</td>
         </tr>
-    <#list user.movieList as movie>
+    <#list actor.movieList as movie>
         <tr>
             <td>${movie.id}</td>
             <td>${movie.name}</td>

@@ -1,9 +1,7 @@
 package org.nevermind.bu.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Movie {
@@ -15,8 +13,10 @@ public class Movie {
     private double price;
     private int year;
     private String genre;
-    private int actorId;
-    private int directorId;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Actor> actorListList;
+    @OneToMany
+    private List<Director> directorList;
 
     public Movie() {
     }
@@ -61,20 +61,20 @@ public class Movie {
         this.genre = genre;
     }
 
-    public int getActorId() {
-        return actorId;
+    public List<Actor> getActorListList() {
+        return actorListList;
     }
 
-    public void setActorId(int actorId) {
-        this.actorId = actorId;
+    public void setActorListList(List<Actor> actorListList) {
+        this.actorListList = actorListList;
     }
 
-    public int getDirectorId() {
-        return directorId;
+    public List<Director> getDirectorList() {
+        return directorList;
     }
 
-    public void setDirectorId(int directorId) {
-        this.directorId = directorId;
+    public void setDirectorList(List<Director> directorList) {
+        this.directorList = directorList;
     }
 
     @Override
@@ -85,8 +85,6 @@ public class Movie {
                 ", price=" + price +
                 ", year=" + year +
                 ", genre='" + genre + '\'' +
-                ", actorId=" + actorId +
-                ", directorId=" + directorId +
                 '}';
     }
 }
