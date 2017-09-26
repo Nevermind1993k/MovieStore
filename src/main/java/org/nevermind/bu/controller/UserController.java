@@ -2,6 +2,7 @@ package org.nevermind.bu.controller;
 
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
+import org.nevermind.bu.service.MovieService;
 import org.nevermind.bu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private MovieService movieService;
 
     @GetMapping("/")
     public String index() {
@@ -21,8 +24,10 @@ public class UserController {
     }
 
     @GetMapping("/user/{id}")
-    public String getUserById(@PathVariable("id") int id, Model model) {
+    public String getUserById(@PathVariable("id") int id, Model model, Model model2) {
         model.addAttribute("user", userService.getById(id));
+        movieService.getAll();
+        model2.addAttribute("movies");
         return "showUser";
     }
 

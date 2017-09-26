@@ -11,7 +11,7 @@ public class Director {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private Date dateofBirth;
+    private Date dateOfBirth;
     @OneToMany(fetch = FetchType.EAGER)
     private List<Movie> movieList;
 
@@ -34,12 +34,12 @@ public class Director {
         this.name = name;
     }
 
-    public Date getDateofBirth() {
-        return dateofBirth;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDateofBirth(Date dateofBirth) {
-        this.dateofBirth = dateofBirth;
+    public void setDateOfBirth(Date dateofBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public List<Movie> getMovieList() {
@@ -55,7 +55,7 @@ public class Director {
         return "Director{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", dateofBirth=" + dateofBirth +
+                ", dateofBirth=" + dateOfBirth +
                 '}';
     }
 }

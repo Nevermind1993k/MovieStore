@@ -28,7 +28,7 @@
 </div>
 
 Add Movie
-<form action="/addMovieToUser" method="post" class="form-group">
+<form action="/addMovieToUser" method="post" name="movie" class="form-group">
     Id
     <input title="id" name="id"/>
     <input type="submit" title="OK" value="Add"/>
