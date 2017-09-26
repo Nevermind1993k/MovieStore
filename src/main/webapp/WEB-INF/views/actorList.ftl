@@ -10,7 +10,7 @@
     </style>
 </head>
 
-<body class="container">
+<body class="container" style="background-color: grey">
 <#include "templates/header.ftl">
 <div class="table-responsive">
     <caption>Actor list</caption>
@@ -26,7 +26,8 @@
             <td><a href="/actor/${actor.id}">${actor.id}</a></td>
             <td>${actor.name}</td>
             <td>${actor.dateOfBirth}</td>
-            <td><form action="/edit/${actor.id}"><input type='submit' title="Edit" value='E'></form>
+            <td>
+                <form action="/edit/${actor.id}"><input type='submit' title="Edit" value='E'></form>
                 <form action="/delete/${actor.id}"><input type='submit' title="Delete" value='X'></form>
             </td>
         </tr>

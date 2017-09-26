@@ -10,7 +10,7 @@
     </style>
 </head>
 
-<body class="container">
+<body class="container" style="background-color: grey">
 <#include "templates/header.ftl">
 <div class="table-responsive">
     <caption>Users list</caption>
@@ -28,7 +28,8 @@
             <td>${user.name}</td>
             <td>${user.email}</td>
             <td>${user.age}</td>
-            <td><form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
+            <td>
+                <form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
                 <form action="/delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
             </td>
         </tr>
