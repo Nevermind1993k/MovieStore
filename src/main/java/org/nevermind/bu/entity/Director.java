@@ -38,7 +38,7 @@ public class Director {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateofBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -55,7 +55,7 @@ public class Director {
         return "Director{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", dateofBirth=" + dateOfBirth +
+                ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
 }

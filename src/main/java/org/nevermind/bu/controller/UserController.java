@@ -26,8 +26,8 @@ public class UserController {
     @GetMapping("/user/{id}")
     public String getUserById(@PathVariable("id") int id, Model model, Model model2) {
         model.addAttribute("user", userService.getById(id));
-        movieService.getAll();
         model2.addAttribute("movies");
+        movieService.getAll();
         return "showUser";
     }
 
