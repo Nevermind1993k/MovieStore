@@ -1,7 +1,8 @@
 package org.nevermind.bu.service;
 
-import org.nevermind.bu.dao.DirectorDao;
+import org.nevermind.bu.dao.interfaces.DirectorDao;
 import org.nevermind.bu.entity.Director;
+import org.nevermind.bu.service.interfaces.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

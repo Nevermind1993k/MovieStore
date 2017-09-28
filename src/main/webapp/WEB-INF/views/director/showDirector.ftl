@@ -5,7 +5,7 @@
     <title>DirectorData</title>
 </head>
 <body class="container">
-<#include "templates/header.ftl">
+<#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Director info</caption>
     <table class="table table-striped">

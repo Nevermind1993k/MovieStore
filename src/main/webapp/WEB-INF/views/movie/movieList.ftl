@@ -11,7 +11,7 @@
 </head>
 
 <body class="container" style="background-color: lightgrey">
-<#include "templates/header.ftl">
+<#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Movies list</caption>
     <table class="table table-striped">
@@ -38,6 +38,6 @@
     </#list>
     </table>
 </div>
-<#include "templates/createMovieForm.ftl"/>
+<#include "createMovieForm.ftl"/>
 </body>
 </html>

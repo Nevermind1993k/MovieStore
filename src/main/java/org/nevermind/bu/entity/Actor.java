@@ -1,5 +1,7 @@
 package org.nevermind.bu.entity;
 
+import com.sun.istack.internal.NotNull;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
@@ -8,10 +10,12 @@ import java.util.List;
 @Table(name = "actor")
 public class Actor {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private Date dateOfBirth;
+    @NotNull
+    @Column(nullable = false)
+    private Date dateOfBirth = null;
     @OneToMany(fetch = FetchType.EAGER)
     private List<Movie> movieList;
 

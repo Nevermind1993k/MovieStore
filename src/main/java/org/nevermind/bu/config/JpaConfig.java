@@ -35,7 +35,7 @@ public class JpaConfig {
     private Properties getParameters() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update"); //create-drop
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         return properties;
     }
 

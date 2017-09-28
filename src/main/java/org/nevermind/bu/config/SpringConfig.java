@@ -1,7 +1,15 @@
 package org.nevermind.bu.config;
 
 import org.nevermind.bu.dao.*;
+import org.nevermind.bu.dao.interfaces.ActorDao;
+import org.nevermind.bu.dao.interfaces.DirectorDao;
+import org.nevermind.bu.dao.interfaces.MovieDao;
+import org.nevermind.bu.dao.interfaces.UserDao;
 import org.nevermind.bu.service.*;
+import org.nevermind.bu.service.interfaces.ActorService;
+import org.nevermind.bu.service.interfaces.DirectorService;
+import org.nevermind.bu.service.interfaces.MovieService;
+import org.nevermind.bu.service.interfaces.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

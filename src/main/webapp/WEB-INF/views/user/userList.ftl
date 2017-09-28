@@ -11,7 +11,7 @@
 </head>
 
 <body class="container" style="background-color: lightgrey">
-<#include "templates/header.ftl">
+<#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Users list</caption>
     <table class="table table-striped">
@@ -36,6 +36,6 @@
     </#list>
     </table>
 </div>
-<#include "templates/createUserForm.ftl"/>
+<#include "createUserForm.ftl"/>
 </body>
 </html>

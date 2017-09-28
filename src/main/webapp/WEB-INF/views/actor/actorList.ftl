@@ -11,7 +11,7 @@
 </head>
 
 <body class="container" style="background-color: lightgrey">
-<#include "templates/header.ftl">
+<#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Actor list</caption>
     <table class="table table-striped">
@@ -34,6 +34,6 @@
     </#list>
     </table>
 </div>
-<#include "templates/createActorForm.ftl"/>
+<#include "createActorForm.ftl"/>
 </body>
 </html>

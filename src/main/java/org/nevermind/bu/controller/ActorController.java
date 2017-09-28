@@ -1,8 +1,7 @@
 package org.nevermind.bu.controller;
 
 import org.nevermind.bu.entity.Actor;
-import org.nevermind.bu.entity.Movie;
-import org.nevermind.bu.service.ActorService;
+import org.nevermind.bu.service.interfaces.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

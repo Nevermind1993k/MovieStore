@@ -1,4 +1,4 @@
-package org.nevermind.bu.service;
+package org.nevermind.bu.service.interfaces;
 
 import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;

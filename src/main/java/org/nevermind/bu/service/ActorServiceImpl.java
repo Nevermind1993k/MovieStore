@@ -1,8 +1,9 @@
 package org.nevermind.bu.service;
 
-import org.nevermind.bu.dao.ActorDao;
+import org.nevermind.bu.dao.interfaces.ActorDao;
 import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
+import org.nevermind.bu.service.interfaces.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

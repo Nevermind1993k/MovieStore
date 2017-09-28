@@ -1,7 +1,7 @@
 package org.nevermind.bu.controller;
 
 import org.nevermind.bu.entity.Director;
-import org.nevermind.bu.service.DirectorService;
+import org.nevermind.bu.service.interfaces.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

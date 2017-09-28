@@ -1,8 +1,7 @@
 package org.nevermind.bu.dao;
 
+import org.nevermind.bu.dao.interfaces.DirectorDao;
 import org.nevermind.bu.entity.Director;
-import org.nevermind.bu.entity.Movie;
-import org.nevermind.bu.entity.User;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;

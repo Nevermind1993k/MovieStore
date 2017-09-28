@@ -1,5 +1,6 @@
 package org.nevermind.bu.dao;
 
+import org.nevermind.bu.dao.interfaces.MovieDao;
 import org.nevermind.bu.entity.Movie;
 import org.springframework.transaction.annotation.Transactional;
 

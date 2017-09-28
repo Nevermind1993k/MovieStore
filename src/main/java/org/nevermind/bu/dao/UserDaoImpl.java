@@ -1,5 +1,6 @@
 package org.nevermind.bu.dao;
 
+import org.nevermind.bu.dao.interfaces.UserDao;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.springframework.transaction.annotation.Transactional;

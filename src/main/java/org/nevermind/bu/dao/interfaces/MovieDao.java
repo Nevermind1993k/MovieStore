@@ -1,4 +1,4 @@
-package org.nevermind.bu.dao;
+package org.nevermind.bu.dao.interfaces;
 
 import org.nevermind.bu.entity.Movie;
 
