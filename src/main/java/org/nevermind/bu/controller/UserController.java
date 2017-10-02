@@ -62,11 +62,5 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @PostMapping("/addMovieToUser")
-    public String addMovieToUser(@ModelAttribute User user, Movie movie) {
-        userService.addMovie(movie);
-        return "redirect:/user/" + user.getId();
-    }
-
 
 }

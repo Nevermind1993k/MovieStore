@@ -5,21 +5,30 @@ import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.nevermind.bu.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
 
     @Override
     public User getById(int id) {
-        return userDao.getUserById(id);
+        return userDao.getById(id);
     }
 
     @Override
-    public List<User> getAll() {
+    public User getByName(String name) {
+        return userDao.getByName(name);
+    }
+
+    @Override
+    public Collection<User> getAll() {
         return userDao.getAll();
     }
 
@@ -29,19 +38,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
-        userDao.delete(id);
+        userDao.delete(userDao.getById(id));
     }
 
     @Override
     public void update(User user) {
         userDao.update(user);
     }
-
-    @Override
-    public void addMovie(Movie movie) {
-        userDao.addMovieToUser(movie);
-    }
-
-
 }
+

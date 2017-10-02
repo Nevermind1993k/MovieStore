@@ -2,12 +2,14 @@ package org.nevermind.bu.dao;
 
 import org.nevermind.bu.dao.interfaces.DirectorDao;
 import org.nevermind.bu.entity.Director;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
 public class DirectorDaoImpl implements DirectorDao {
 
     @PersistenceContext
@@ -20,7 +22,7 @@ public class DirectorDaoImpl implements DirectorDao {
     }
 
     @Override
-    public Director getDirectorById(int id) {
+    public Director getById(int id) {
         return entityManager.createQuery("SELECT d FROM Director d WHERE id=:id", Director.class)
                 .setParameter("id", id)
                 .getSingleResult();
@@ -28,8 +30,13 @@ public class DirectorDaoImpl implements DirectorDao {
 
     @Override
     @Transactional
-    public Director update(Director newDirector) {
-        return entityManager.merge(newDirector);
+    public void update(Director newDirector) {
+        entityManager.merge(newDirector);
+    }
+
+    @Override
+    public void delete(Director director) {
+        entityManager.remove(director);
     }
 
     @Override
@@ -37,17 +44,4 @@ public class DirectorDaoImpl implements DirectorDao {
         return entityManager.createQuery("SELECT d FROM Director d", Director.class)
                 .getResultList();
     }
-
-    @Override
-    public void delete(int id) {
-        entityManager.createQuery("DELETE Director WHERE id=:id")
-                .setParameter("id", id).
-                executeUpdate();
-    }
-
-    @Override
-    public void delete(String name) {
-
-    }
-
 }

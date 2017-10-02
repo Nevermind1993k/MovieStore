@@ -4,21 +4,25 @@ import org.nevermind.bu.dao.interfaces.DirectorDao;
 import org.nevermind.bu.entity.Director;
 import org.nevermind.bu.service.interfaces.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
+@Service
 public class DirectorServiceImpl implements DirectorService {
 
     @Autowired
     DirectorDao directorDao;
 
+
     @Override
     public Director getById(int id) {
-        return directorDao.getDirectorById(id);
+        return directorDao.getById(id);
     }
 
     @Override
-    public List<Director> getAll() {
+    public Collection<Director> getAll() {
         return directorDao.getAll();
     }
 
@@ -29,7 +33,7 @@ public class DirectorServiceImpl implements DirectorService {
 
     @Override
     public void delete(int id) {
-        directorDao.delete(id);
+        directorDao.delete(directorDao.getById(id));
     }
 
     @Override

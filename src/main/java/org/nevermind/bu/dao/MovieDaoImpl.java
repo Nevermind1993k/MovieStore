@@ -2,17 +2,18 @@ package org.nevermind.bu.dao;
 
 import org.nevermind.bu.dao.interfaces.MovieDao;
 import org.nevermind.bu.entity.Movie;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
 public class MovieDaoImpl implements MovieDao {
 
     @PersistenceContext
     private EntityManager entityManager;
-
 
     @Override
     @Transactional
@@ -21,7 +22,7 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public Movie getMovieById(int id) {
+    public Movie getById(int id) {
         return entityManager.createQuery("SELECT m FROM Movie m WHERE id=:id", Movie.class)
                 .setParameter("id", id)
                 .getSingleResult();
@@ -29,25 +30,18 @@ public class MovieDaoImpl implements MovieDao {
 
     @Override
     @Transactional
-    public Movie update(Movie newMovie) {
-        return entityManager.merge(newMovie);
+    public void update(Movie newMovie) {
+        entityManager.merge(newMovie);
+    }
+
+    @Override
+    public void delete(Movie movie) {
+        entityManager.remove(movie);
     }
 
     @Override
     public List<Movie> getAll() {
         return entityManager.createQuery("SELECT m FROM Movie m", Movie.class)
                 .getResultList();
-    }
-
-    @Override
-    public void delete(int id) {
-        entityManager.createQuery("DELETE Movie WHERE id=:id")
-                .setParameter("id", id).
-                executeUpdate();
-    }
-
-    @Override
-    public void delete(String name) {
-
     }
 }

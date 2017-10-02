@@ -2,12 +2,14 @@ package org.nevermind.bu.dao;
 
 import org.nevermind.bu.dao.interfaces.ActorDao;
 import org.nevermind.bu.entity.Actor;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
 public class ActorDaoImpl implements ActorDao {
 
     @PersistenceContext
@@ -20,16 +22,22 @@ public class ActorDaoImpl implements ActorDao {
     }
 
     @Override
-    public Actor getActorById(int id) {
+    public Actor getById(int id) {
         return entityManager.createQuery("SELECT a FROM Actor a WHERE id=:id", Actor.class)
                 .setParameter("id", id)
                 .getSingleResult();
     }
 
+
     @Override
     @Transactional
-    public Actor update(Actor newActor) {
-        return entityManager.merge(newActor);
+    public void update(Actor newActor) {
+        entityManager.merge(newActor);
+    }
+
+    @Override
+    public void delete(Actor actor) {
+        entityManager.remove(actor);
     }
 
     @Override
@@ -37,17 +45,5 @@ public class ActorDaoImpl implements ActorDao {
         return entityManager.createQuery("SELECT a FROM Actor a", Actor.class)
                 .getResultList();
     }
-
-    @Override
-    @Transactional
-    public void delete(int id) {
-        entityManager.createQuery("DELETE Actor WHERE id=:id")
-                .setParameter("id", id).
-                executeUpdate();
-    }
-
-    @Override
-    public void delete(String name) {
-
-    }
 }
+

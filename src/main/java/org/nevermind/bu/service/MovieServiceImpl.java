@@ -4,9 +4,12 @@ import org.nevermind.bu.dao.interfaces.MovieDao;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
+@Service
 public class MovieServiceImpl implements MovieService {
 
     @Autowired
@@ -14,11 +17,11 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie getById(int id) {
-        return movieDao.getMovieById(id);
+        return movieDao.getById(id);
     }
 
     @Override
-    public List<Movie> getAll() {
+    public Collection<Movie> getAll() {
         return movieDao.getAll();
     }
 
@@ -29,7 +32,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public void delete(int id) {
-        movieDao.delete(id);
+        movieDao.delete(movieDao.getById(id));
     }
 
     @Override
@@ -37,3 +40,4 @@ public class MovieServiceImpl implements MovieService {
         movieDao.update(movie);
     }
 }
+

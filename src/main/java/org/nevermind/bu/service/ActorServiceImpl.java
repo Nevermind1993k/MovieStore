@@ -5,9 +5,12 @@ import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
+@Service
 public class ActorServiceImpl implements ActorService {
 
     @Autowired
@@ -15,11 +18,11 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public Actor getById(int id) {
-        return actorDao.getActorById(id);
+        return actorDao.getById(id);
     }
 
     @Override
-    public List<Actor> getAll() {
+    public Collection<Actor> getAll() {
         return actorDao.getAll();
     }
 
@@ -30,16 +33,12 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public void delete(int id) {
-        actorDao.delete(id);
+        actorDao.delete(actorDao.getById(id));
     }
 
     @Override
     public void update(Actor actor) {
         actorDao.update(actor);
     }
-
-    @Override
-    public void addMovie(Movie movie) {
-
-    }
 }
+
