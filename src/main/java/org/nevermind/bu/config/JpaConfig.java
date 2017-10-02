@@ -1,6 +1,7 @@
 package org.nevermind.bu.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,8 +17,8 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages = "org.nevermind.bu.entity")
 public class JpaConfig {
-
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
@@ -34,7 +35,7 @@ public class JpaConfig {
 
     private Properties getParameters() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update"); //create-drop
+        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop"); //create-drop
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         return properties;
     }

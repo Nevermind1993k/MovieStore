@@ -13,10 +13,10 @@
             <a class="navbar-brand" href="/">Movie-Store</a>
         </div>
         <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="/users">Users</a></li>
-            <li class="active"><a href="/movies">Movies</a></li>
-            <li class="active"><a href="/actors">Actors</a></li>
-            <li class="active"><a href="/directors">Directors</a></li>
+            <li class="active"><a href="/user/all">Users</a></li>
+            <li class="active"><a href="/movie/all">Movies</a></li>
+            <li class="active"><a href="/actor/all">Actors</a></li>
+            <li class="active"><a href="/director/all">Directors</a></li>
         </ul>
     </div>
 </nav>

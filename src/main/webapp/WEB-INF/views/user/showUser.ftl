@@ -28,11 +28,11 @@
 </div>
 
 Add Movie
-<form action="/addMovieToUser" method="post" name="movie" class="form-group">
+<#--<form action="/addMovieToUser" method="post" name="movie" class="form-group">
     Id
     <input title="id" name="id"/>
     <input type="submit" title="OK" value="Add"/>
-</form>
+</form>-->
 
 <div class="table-responsive">
     <caption>User movies</caption>
@@ -58,6 +58,6 @@ Add Movie
 
     </table>
 </div>
-<a type="button" href="/users" class="button">Back</a>
+<a type="button" href="/all" class="button">Back</a>
 </body>
 </html>

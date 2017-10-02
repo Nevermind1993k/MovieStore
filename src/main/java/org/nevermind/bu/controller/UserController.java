@@ -1,6 +1,5 @@
 package org.nevermind.bu.controller;
 
-import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.entity.User;
 import org.nevermind.bu.service.interfaces.MovieService;
 import org.nevermind.bu.service.interfaces.UserService;
@@ -10,57 +9,57 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private MovieService movieService;
 
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
-    @GetMapping("/user/{id}")
-    public String getUserById(@PathVariable("id") int id, Model model, Model model2) {
+    @GetMapping("/{id}")
+    public String getById(@PathVariable("id") int id,
+                          @RequestParam(value = "edit", required = false) boolean edit, Model model) {
         model.addAttribute("user", userService.getById(id));
-        model2.addAttribute("movies");
-        movieService.getAll();
+        if (edit) {
+            return "editUser";
+        }
         return "showUser";
     }
 
-    @GetMapping("/users")
-    public String getAllUsers(Model model) {
+    @GetMapping("/all")
+    public String getAll(Model model) {
         model.addAttribute("users", userService.getAll());
         return "userList";
     }
 
-    @PostMapping("/newUser")
-    public String createUser(@ModelAttribute User user) {
+    @GetMapping("/create")
+    public String createPage(@RequestParam(value = "message", required = false) String message, Model model) {
+        if (message != null) {
+            model.addAttribute("message", message);
+        }
+        return "createUserForm";
+    }
+
+    @PostMapping("/create")
+    public String createUser(@ModelAttribute User user, Model model) {
+        /*List<String> errors = Utils.validate(user);
+        if (!errors.isEmpty()) {
+            model.addAttribute("errors", errors);
+            return "createUserForm";
+        }
         userService.save(user);
-        return "redirect:users";
+        return "redirect:all";*/
+        return "createUserForm";
     }
 
-    @GetMapping("/edit/{id}")
-    public String editPage(@PathVariable("id") int id, Model model) {
-        System.out.println("id = " + id);
-        model.addAttribute("user", userService.getById(id));
-        return "editUser";
-    }
-
-    @PostMapping("/editUser")
-    public String editUser(@ModelAttribute User user, Model model) {
+    @PostMapping("/update")
+    public String update(@ModelAttribute User user) {
         userService.update(user);
-        return "redirect:edit/" + user.getId();
+        return "redirect:" + user.getId() + "?edit=false";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         userService.delete(id);
-        return "redirect:/users";
+        return "redirect:/all";
     }
-
-
 }
