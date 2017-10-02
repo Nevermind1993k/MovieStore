@@ -10,7 +10,7 @@
 
 <form action="/loginPage" method="post" class="form-group">
     Name
-    <input title="Name" type="text" name="username"/>
+    <input title="Name" type="text" name="name"/>
     Password
     <input title="Pass" type="text" name="password"/>
     <input type="submit" value="Login"/>
