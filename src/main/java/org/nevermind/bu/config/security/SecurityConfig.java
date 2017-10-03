@@ -17,19 +17,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    @Autowired
+    /*@Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .usersByUsernameQuery("SELECT username, password, enabled FROM user WHERE username = ?")
                 .authoritiesByUsernameQuery("SELECT username, role FROM roles WHERE username = ?")
                 .dataSource(dataSource);
-    }
+    }*/
 
-    /*@Autowired
+    @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("admin").password("1234").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("user").password("1234").roles("USER");
-    }*/
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
