@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>UserData</title>
+    <title>Error Page</title>
 </head>
 
 <body class="container">

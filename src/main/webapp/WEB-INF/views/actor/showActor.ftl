@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${actor.name}</td>
+            <td>${actor.username}</td>
         </tr>
         <tr>
             <td>Date Of Birth</td>
@@ -36,7 +36,7 @@
     <#list actor.movieList as movie>
         <tr>
             <td>${movie.id}</td>
-            <td>${movie.name}</td>
+            <td>${movie.username}</td>
             <td>${movie.year}</td>
             <td>${movie.genre}</td>
         </tr>

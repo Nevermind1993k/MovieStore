@@ -26,7 +26,7 @@
     <#list movies as movie>
         <tr>
             <td><a href="/movie/${movie.id}">${movie.id}</a></td>
-            <td>${movie.name}</td>
+            <td>${movie.username}</td>
             <td>${movie.genre}</td>
             <td>${movie.year}</td>
             <td>${movie.price}</td>

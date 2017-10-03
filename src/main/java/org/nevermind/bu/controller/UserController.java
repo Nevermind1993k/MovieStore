@@ -3,10 +3,13 @@ package org.nevermind.bu.controller;
 import org.nevermind.bu.entity.User;
 import org.nevermind.bu.service.interfaces.MovieService;
 import org.nevermind.bu.service.interfaces.UserService;
+import org.nevermind.bu.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -41,14 +44,14 @@ public class UserController {
 
     @PostMapping("/create")
     public String createUser(@ModelAttribute User user, Model model) {
-        /*List<String> errors = Utils.validate(user);
+        List<String> errors = Utils.validate(user);
         if (!errors.isEmpty()) {
             model.addAttribute("errors", errors);
             return "createUserForm";
         }
         userService.save(user);
-        return "redirect:all";*/
-        return "createUserForm";
+        return "redirect:all";
+//        return "createUserForm";
     }
 
     @PostMapping("/update")

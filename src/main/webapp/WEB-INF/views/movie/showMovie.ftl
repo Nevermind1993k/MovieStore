@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${movie.name}</td>
+            <td>${movie.username}</td>
         </tr>
         <tr>
             <td>Genre</td>

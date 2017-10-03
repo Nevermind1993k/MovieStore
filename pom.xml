@@ -22,7 +22,7 @@
     </build>
     <packaging>war</packaging>
 
-    <name>movieStore</name>
+    <username>movieStore</username>
     <url>http://maven.apache.org</url>
 
     <properties>

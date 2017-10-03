@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${user.name}</td>
+            <td>${user.username}</td>
         </tr>
         <tr>
             <td>Email</td>
@@ -28,9 +28,9 @@
 </div>
 
 Add Movie
-<#--<form action="/addMovieToUser" method="post" name="movie" class="form-group">
+<#--<form action="/addMovieToUser" method="post" username="movie" class="form-group">
     Id
-    <input title="id" name="id"/>
+    <input title="id" username="id"/>
     <input type="submit" title="OK" value="Add"/>
 </form>-->
 
@@ -47,7 +47,7 @@ Add Movie
     <#list user.movieList as movie>
         <tr>
             <td>${movie.id}</td>
-            <td>${movie.name}</td>
+            <td>${movie.username}</td>
             <td>${movie.year}</td>
             <td>${movie.genre}</td>
             <td>${movie.price}</td>

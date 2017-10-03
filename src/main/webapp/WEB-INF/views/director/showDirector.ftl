@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${director.name}</td>
+            <td>${director.username}</td>
         </tr>
         <tr>
             <td>Date Of Birth</td>

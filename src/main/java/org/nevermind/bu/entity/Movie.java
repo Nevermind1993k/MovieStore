@@ -14,9 +14,9 @@ public class Movie {
     private double price;
     private int year;
     private String genre;
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
     private List<Actor> actorListList;
-    @OneToMany
+    @OneToMany(targetEntity = Director.class)
     private List<Director> directorList;
 
     public Movie() {
