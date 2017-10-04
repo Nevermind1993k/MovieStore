@@ -17,27 +17,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    /*@Autowired
+    @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .usersByUsernameQuery("SELECT username, password, enabled FROM user WHERE username = ?")
                 .authoritiesByUsernameQuery("SELECT username, role FROM roles WHERE username = ?")
                 .dataSource(dataSource);
-    }*/
+    }
 
-    @Autowired
+    /*@Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("admin").password("1234").roles("ADMIN");
         auth.inMemoryAuthentication().withUser("user").password("1234").roles("USER");
-    }
+    }*/
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "movies/**", "actors/**", "/directors/**").permitAll()
-//                .antMatchers("movies/**").access("hasRole('USER') and hasRole('ADMIN')")
-                .antMatchers("/**", "/user/**").access("hasRole('ADMIN')")
+                .antMatchers("/").permitAll()
+//                .antMatchers( "movies/**", "actors/**", "/directors/**").access("hasRole('USER')")
+                .antMatchers("/user/**").access("hasRole('ADMIN')")
+                .anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/loginPage").permitAll()
                 .usernameParameter("username")
