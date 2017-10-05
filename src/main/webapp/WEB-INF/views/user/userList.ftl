@@ -29,8 +29,8 @@
             <td>${user.email}</td>
             <td>${user.age}</td>
             <td>
-                <form action="/edit/${user.id}"><input type='submit' title="Edit" value='E'></form>
-                <form action="/delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
+                <form action="${user.id}?edit=true""><input type='submit' title="Edit" value='E'></form>
+                <form action="delete/${user.id}"><input type='submit' title="Delete" value='X'></form>
             </td>
         </tr>
     </#list>

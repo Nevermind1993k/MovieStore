@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>UserData</title>
 </head>
-<body class="container">
+<body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 <div class="table-responsive">
     <caption>User info</caption>
@@ -27,7 +27,7 @@
     </table>
 </div>
 
-Add Movie
+Add To Cart
 <#--<form action="/addMovieToUser" method="post" username="movie" class="form-group">
     Id
     <input title="id" username="id"/>
