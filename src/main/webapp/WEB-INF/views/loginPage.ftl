@@ -14,12 +14,10 @@
 
 <div id="content">
     <fieldset>
-        <legend>Enter Your login and pass</legend>
+        <legend>You should not pass</legend>
         <form action="/loginPage" method="post" class="form-group">
-            Login&#8194;&nbsp;&#8194;&nbsp;&#8194;
-            <input title="Name" type="text" name="username"/><br/>
-            Password
-            <input title="Pass" type="text" name="password"/><br/>
+            Login&#8194;&nbsp;&#8194;&nbsp;&#8194;<input title="Name" type="text" name="username"/><br/>
+            Password <input title="Pass" type="text" name="password"/><br/>
             <input type="submit" value="Login"/>
         </form>
     </fieldset>

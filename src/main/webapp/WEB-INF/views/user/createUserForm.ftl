@@ -17,7 +17,7 @@ EROOR:
 <div id="content">
     <fieldset>
         <legend>Add User</legend>
-        <form action="/create" method="post" name="user" class="form-group">
+        <form action="create" method="post" name="user" class="form-group">
             Name :&thinsp;<input type="text" title="Name"  name="username"/><br/>
             Email :&nbsp;<input type="text" title="Email"  name="email"/><br/>
             Age :&#8194;&nbsp; <input type="number" title="Age"  name="age"/><br/>
