@@ -27,14 +27,13 @@
     </table>
 </div>
 
-Add To Cart
 <#--<form action="/addMovieToUser" method="post" username="movie" class="form-group">
     Id
     <input title="id" username="id"/>
     <input type="submit" title="OK" value="Add"/>
 </form>-->
 
-<div class="table-responsive">
+<#--<div class="table-responsive">
     <caption>User movies</caption>
     <table class="table table-striped">
         <tr>
@@ -57,7 +56,7 @@ Add To Cart
     </#list>
 
     </table>
-</div>
+</div>-->
 <a type="button" href="/all" class="button">Back</a>
 </body>
 </html>

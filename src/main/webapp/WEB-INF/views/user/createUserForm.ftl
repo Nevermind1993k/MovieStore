@@ -8,7 +8,6 @@
 <body class="container">
 
 <#if errors??>
-EROOR:
     <#list errors as error>
     <h1>error</h1><br>
     </#list>

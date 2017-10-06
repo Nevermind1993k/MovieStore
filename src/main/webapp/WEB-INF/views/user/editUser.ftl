@@ -7,11 +7,11 @@
 <body class="container">
 <#include "*/header.ftl">
 
-<form action="/editUser" method="post" username="user" class="form-group">
-    <input title="Id" type="number" username="id" value="${user.id}"/>
-    <input title="Name" type="text" username="username" value="${user.username}"/>
-    <input title="Email" type="text" username="email" value="${user.email}"/>
-    <input title="Age" type="number" username="age" value="${user.age}"/>
+<form action="update" method="post" name="user" class="form-group">
+    <input title="Id" type="number" name="id" value="${user.id}"/>
+    <input title="Name" type="text" name="username" value="${user.username}"/>
+    <input title="Email" type="text" name="email" value="${user.email}"/>
+    <input title="Age" type="number" name="age" value="${user.age}"/>
     <input type="submit" title="OK" value="Edit!"/>
 </form>
 <a type="button" href="/all" class="button">Back</a>

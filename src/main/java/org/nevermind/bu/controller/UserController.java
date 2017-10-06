@@ -24,8 +24,11 @@ public class UserController {
         model.addAttribute("user", userService.getById(id));
         if (edit) {
             return "editUser";
+//            return "redirect:" + userService.getById(id) + "?edit=false";
+
+        } else {
+            return "showUser";
         }
-        return "showUser";
     }
 
     @GetMapping("/all")
@@ -57,12 +60,12 @@ public class UserController {
     @PostMapping("/update")
     public String update(@ModelAttribute User user) {
         userService.update(user);
-        return "redirect:" + user.getId() + "?edit=false";
+        return "redirect:" + user.getId();// + "?edit=false";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int id) {
         userService.delete(id);
-        return "redirect:/all";
+        return "redirect:/user/all";
     }
 }
