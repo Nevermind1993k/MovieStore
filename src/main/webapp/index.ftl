@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MovieStore</title>
+    <title>Movie Store</title>
 <#assign security=JspTaglibs["http://www.springframework.org/security/tags"] />
+    <style>
+        form {
+            display: inline;
+        }
+    </style>
 </head>
 
 <body class="container" style="background-color: lightgrey">
 <#include "WEB-INF/views/header.ftl">
 <div class="container">
+    <h3> Welcome to Movie-Store </h3>
 <@security.authorize access="isAuthenticated()">
-    <h1>Welcome to Movie-Store, <h2><@security.authentication property="principal.username"/></h2></h1>
+    <h1><@security.authentication property="principal.username"/></h1>
 </@security.authorize>
+
 </div>
 </body>
 </html>

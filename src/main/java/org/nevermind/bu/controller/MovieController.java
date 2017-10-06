@@ -33,10 +33,11 @@ public class MovieController {
     @PostMapping("/newMovie")
     public String createMovie(@ModelAttribute Movie movie) {
         movieService.save(movie);
-        return "redirect:movies";
+//        return "redirect:movie/all";
+        return "redirect:all";
     }
 
-    /*@GetMapping("/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String editPage(@PathVariable("id") int id, Model model) {
         System.out.println("id = " + id);
         model.addAttribute("movie", movieService.getById(id));
@@ -53,6 +54,6 @@ public class MovieController {
     public String deleteMovie(@PathVariable("id") int id) {
         movieService.delete(id);
         return "redirect:/movies";
-    }*/
+    }
 
 }

@@ -14,7 +14,7 @@
     <input title="Age" type="number" name="age" value="${user.age}"/>
     <input type="submit" title="OK" value="Edit!"/>
 </form>
-<a type="button" href="/all" class="button">Back</a>
+<a type="button" href="/user/all" class="button">Back</a>
 </body>
 </html>
 

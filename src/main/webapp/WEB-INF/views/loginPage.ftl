@@ -14,12 +14,14 @@
 
 <div id="content">
     <fieldset>
-        <legend>You should not pass</legend>
+        <legend>Login form</legend>
         <form action="/loginPage" method="post" class="form-group">
             Login&#8194;&nbsp;&#8194;&nbsp;&#8194;<input title="Name" type="text" name="username"/><br/>
-            Password <input title="Pass" type="text" name="password"/><br/>
+            Password <input title="Pass" type="password" name="password"/><br/>
             <input type="submit" value="Login"/>
             <input type="submit" value="Register"/>
+        <#--<form action="registerPage.ftl"><input type='submit' title="Reg" value='Register'></form>-->
+
         </form>
     </fieldset>
     <br/>

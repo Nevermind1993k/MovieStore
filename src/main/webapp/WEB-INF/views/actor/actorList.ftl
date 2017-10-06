@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ActorData</title>
+    <title>Actor List</title>
     <style>
         form {
             display: inline;
@@ -24,7 +24,7 @@
     <#list actors as actor>
         <tr>
             <td><a href="/actor/${actor.id}">${actor.id}</a></td>
-            <td>${actor.username}</td>
+            <td>${actor.name}</td>
             <td>${actor.dateOfBirth}</td>
             <td>
                 <form action="/edit/${actor.id}"><input type='submit' title="Edit" value='E'></form>

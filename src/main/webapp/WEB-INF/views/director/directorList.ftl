@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DirectorData</title>
+    <title>Director List</title>
     <style>
         form {
             display: inline;
@@ -24,7 +24,7 @@
     <#list directors as director>
         <tr>
             <td><a href="/director/${director.id}">${director.id}</a></td>
-            <td>${director.username}</td>
+            <td>${director.name}</td>
             <td>${director.dateOfBirth}</td>
             <td>
                 <form action="/edit/${director.id}"><input type='submit' title="Edit" value='E'></form>

@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${movie.username}</td>
+            <td>${movie.name}</td>
         </tr>
         <tr>
             <td>Genre</td>
@@ -27,6 +27,6 @@
     </table>
 </div>
 
-<a type="button" href="/movies" class="button">Back</a>
+<a type="button" href="/movie/all" class="button">Back</a>
 </body>
 </html>
