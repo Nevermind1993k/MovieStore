@@ -19,7 +19,7 @@
             Login&#8194;&nbsp;&#8194;&nbsp;&#8194;<input title="Name" type="text" name="username"/><br/>
             Password <input title="Pass" type="password" name="password"/><br/>
             <input type="submit" value="Login"/>
-            <input type="submit" value="Register"/>
+            <#--<input type="submit" value="Register"/>-->
         <#--<form action="registerPage.ftl"><input type='submit' title="Reg" value='Register'></form>-->
 
         </form>

@@ -53,7 +53,9 @@ public class MovieController {
     @GetMapping("/delete/{id}")
     public String deleteMovie(@PathVariable("id") int id) {
         movieService.delete(id);
-        return "redirect:/movies";
+//        return "redirect:/movies";
+        return "redirect:all";
+
     }
 
 }

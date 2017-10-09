@@ -1,13 +1,12 @@
 package org.nevermind.bu.controller;
 
+import org.nevermind.bu.entity.Actor;
+import org.nevermind.bu.entity.Director;
 import org.nevermind.bu.service.interfaces.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/director")
@@ -31,4 +30,31 @@ public class DirectorController {
         model.addAttribute("directors", directorService.getAll());
         return "directorList";
     }
+
+    @PostMapping("/newDirector")
+    public String createDirector(@ModelAttribute Director director) {
+        directorService.save(director);
+        return "redirect:all";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editPage(@PathVariable("id") int id, Model model) {
+        System.out.println("id = " + id);
+        model.addAttribute("director", directorService.getById(id));
+        return "editDirector";
+    }
+
+    @PostMapping("editDirector")
+    public String editDirector(@ModelAttribute Director director, Model model) {
+        directorService.update(director);
+        return "redirect:edit/" + director.getId();
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteDirector(@PathVariable("id") int id) {
+        directorService.delete(id);
+//        return "redirect:/director/all";
+        return "redirect:all";
+    }
+
 }
