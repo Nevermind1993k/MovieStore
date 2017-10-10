@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${actor.username}</td>
+            <td>${actor.name}</td>
         </tr>
         <tr>
             <td>Date Of Birth</td>
@@ -23,7 +23,8 @@
         </tr>
     </table>
 </div>
-
+<br>
+<#if actor.movieList ? size !=0>
 <div class="table-responsive">
     <caption>Actor movies</caption>
     <table class="table table-striped">
@@ -36,17 +37,18 @@
     <#list actor.movieList as movie>
         <tr>
             <td>${movie.id}</td>
-            <td>${movie.username}</td>
+            <td>${movie.name}</td>
             <td>${movie.year}</td>
             <td>${movie.genre}</td>
         </tr>
-    <#else>
-        <h1>Empty movies</h1>
+    <#--<#else>-->
+        <#--<h1>Empty movies</h1>-->
     </#list>
 
     </table>
 </div>
+</#if>
 
-<a type="button" href="/actors" class="button">Back</a>
+<a type="button" href="/actor/all" class="button">Back</a>
 </body>
 </html>

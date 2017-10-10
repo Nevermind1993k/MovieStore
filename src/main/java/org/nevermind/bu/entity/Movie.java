@@ -14,8 +14,9 @@ public class Movie {
     private double price;
     private int year;
     private String genre;
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
-    private List<Actor> actorListList;
+//    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
+    @OneToMany(targetEntity = Actor.class)
+    private List<Actor> actorList;
     @OneToMany(targetEntity = Director.class)
     private List<Director> directorList;
 
@@ -62,12 +63,12 @@ public class Movie {
         this.genre = genre;
     }
 
-    public List<Actor> getActorListList() {
-        return actorListList;
+    public List<Actor> getActorList() {
+        return actorList;
     }
 
-    public void setActorListList(List<Actor> actorListList) {
-        this.actorListList = actorListList;
+    public void setActorList(List<Actor> actorList) {
+        this.actorList = actorList;
     }
 
     public List<Director> getDirectorList() {

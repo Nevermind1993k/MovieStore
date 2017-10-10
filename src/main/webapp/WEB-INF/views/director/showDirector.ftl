@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${director.username}</td>
+            <td>${director.name}</td>
         </tr>
         <tr>
             <td>Date Of Birth</td>
@@ -23,7 +23,31 @@
         </tr>
     </table>
 </div>
+<br>
+<#if director.movieList ? size !=0>
+<div class="table-responsive">
+    <caption>Director movies</caption>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Name</a></td>
+            <td>Year</td>
+            <td>Genre</td>
+        </tr>
+        <#list director.movieList as movie>
+            <tr>
+                <td>${movie.id}</td>
+                <td>${movie.name}</td>
+                <td>${movie.year}</td>
+                <td>${movie.genre}</td>
+            </tr>
+        <#--<#else>-->
+        <#--<h1>Empty movies</h1>-->
+        </#list>
+    </table>
+</div>
+</#if>
 
-<a type="button" href="/directors" class="button">Back</a>
+<a type="button" href="/director/all" class="button">Back</a>
 </body>
 </html>
