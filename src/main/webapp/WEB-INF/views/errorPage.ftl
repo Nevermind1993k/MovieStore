@@ -7,7 +7,10 @@
 </head>
 
 <body class="container">
-<h1>You shall not pass</h1>
+<#include "header.ftl">
+<h1>Error</h1>
+
+
 </body>
 
 </html>

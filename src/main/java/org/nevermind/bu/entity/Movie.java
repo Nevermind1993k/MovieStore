@@ -1,5 +1,8 @@
 package org.nevermind.bu.entity;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,10 +17,11 @@ public class Movie {
     private double price;
     private int year;
     private String genre;
-//    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
-    @OneToMany(targetEntity = Actor.class)
+    //    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
+    @OneToMany(targetEntity = Actor.class, fetch = FetchType.EAGER)
     private List<Actor> actorList;
-    @OneToMany(targetEntity = Director.class)
+    @OneToMany(targetEntity = Director.class/*, fetch = FetchType.EAGER*/)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Director> directorList;
 
     public Movie() {
