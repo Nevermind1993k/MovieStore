@@ -18,7 +18,7 @@
 <@security.authorize access="isAuthenticated()">
     <h1><@security.authentication property="principal.username"/></h1>
 </@security.authorize>
+
 </div>
 </body>
-
 </html>

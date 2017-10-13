@@ -23,4 +23,9 @@ public class HomeController {
     public String errorPage() {
         return "errorPage";
     }
+
+    @GetMapping("/infoPage")
+    public String infoPage() {
+        return "infoPage";
+    }
 }

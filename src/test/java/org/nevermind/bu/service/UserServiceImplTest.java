@@ -1,6 +1,6 @@
 package org.nevermind.bu.service;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.junit.runner.RunWith;
 import org.nevermind.bu.config.JpaConfigTest;
 import org.nevermind.bu.config.SpringConfig;
@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -31,7 +33,7 @@ public class UserServiceImplTest {
         Optional<User> testuser123 = all.stream().filter(u -> u.getUsername().equals("testuser123")).findFirst();
         User user1 = testuser123.get();
         User userServiceById = userService.getById(user1.getId());
-        assertNotNull(userServiceById);
+//        assertNotNull(userServiceById);
         assertEquals("testuser123", userServiceById.getUsername());
     }
 

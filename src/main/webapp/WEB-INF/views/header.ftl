@@ -21,7 +21,7 @@
             <li class="active"><a href="/movie/all">Movies</a></li>
             <li class="active"><a href="/actor/all">Actors</a></li>
             <li class="active"><a href="/director/all">Directors</a></li>
-            <#--<li class="active"><a href="infoPage.html">Info</a></li>-->
+            <li class="active"><a href="/infoPage">Info</a></li>
         <@security.authorize access="isAuthenticated()">
             <li class="active"><a href="/logout">Logout</a></li>
         </@security.authorize>

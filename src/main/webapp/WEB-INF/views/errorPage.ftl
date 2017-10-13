@@ -7,10 +7,7 @@
 </head>
 
 <body class="container">
-<#include "header.ftl">
-<h1>Error</h1>
-
-
+<h1>It is error</h1>
 </body>
 
 </html>
