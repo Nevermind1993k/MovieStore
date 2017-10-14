@@ -72,7 +72,8 @@
 </#if>
 
 <h2>Trailer sample: </h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KPa1_7AF1lM" frameborder="0" allowfullscreen></iframe>
+<#--<iframe width="560" height="315" src="https://www.youtube.com/embed/KPa1_7AF1lM" frameborder="0" allowfullscreen></iframe>-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J---aiyznGQ" frameborder="0" allowfullscreen></iframe>
 <br/>
 
 <a type="button" href="/movie/all" class="button">Back</a>
