@@ -1,6 +1,7 @@
 package org.nevermind.bu.controller;
 
 import org.nevermind.bu.service.interfaces.CartService;
+import org.nevermind.bu.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,15 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+//    @Autowired
+//    private UserService userService;
+
+    @GetMapping("/all")
+    public String getAll(Model model) {
+        model.addAttribute("cart", cartService.getAll());
+        return "cartList";
+    }
+
 /*    @GetMapping("/{id}")
     public String getById(@PathVariable("id") int id,
                           @RequestParam(value = "edit", required = false) boolean edit, Model model) {
@@ -29,11 +39,7 @@ public class CartController {
         }
     }*/
 
-    @GetMapping("/all")
-    public String getAll(Model model) {
-        model.addAttribute("cart", cartService.getAll());
-        return "cartList";
-    }
+
 
     /*@GetMapping("/buyMovie")
     public String buyMovie(@PathVariable("id") int id){

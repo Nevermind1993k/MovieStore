@@ -11,8 +11,9 @@
 <#include "*/header.ftl">
 
 This is Cart List
-<#--<div class="table-responsive">
-    <caption>Cart list</caption>
+<#if cart.movieList ? size !=0>
+<div class="table-responsive">
+    <caption>Movies in Cart</caption>
     <table class="table table-striped">
         <tr>
             <th>Id</th>
@@ -20,7 +21,7 @@ This is Cart List
             <th>Movies</th>
             <th>Buttons</th>
         </tr>
-    <#list movies as movie>
+        <#list cart.movieList as movie>
         <tr>
             <td><a href="/movie/${movie.id}">${movie.id}</a></td>
             <td>${movie.name}</td>
@@ -31,7 +32,8 @@ This is Cart List
         </tr>
     </#list>
     </table>
-</div>-->
+</div>
+</#if>
 </body>
 
 </html>

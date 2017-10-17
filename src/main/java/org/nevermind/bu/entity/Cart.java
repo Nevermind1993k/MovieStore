@@ -34,6 +34,14 @@ public class Cart {
         this.name = name;
     }
 
+    public Collection<Movie> getMovieList() {
+        return movieList;
+    }
+
+    public void setMovieList(Collection<Movie> movieList) {
+        this.movieList = movieList;
+    }
+
     @Override
     public String toString() {
         return "Cart{" +

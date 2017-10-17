@@ -19,12 +19,12 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-//@EnableJpaRepositories(basePackages = {"org.nevermind.bu.dao2"})
+@EnableJpaRepositories(basePackages = {"org.nevermind.bu.dao2", "org.nevermind.bu.entity"})
 @ComponentScan(basePackages = "org.nevermind.bu.entity")
 public class JpaConfig {
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(getDataSource());
         entityManagerFactoryBean.setPackagesToScan("org.nevermind.bu.entity");

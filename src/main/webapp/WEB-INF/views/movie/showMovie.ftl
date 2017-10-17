@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>MovieData</title>
 </head>
-<body class="container">
+<body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
-<div class="table-responsive">
+<div class="table-responsive" >
     <caption>Movie info</caption>
     <table class="table table-striped">
         <tr>
@@ -41,7 +41,7 @@
         </tr>
         <#list movie.actorList as actor>
             <tr>
-                <td>${actor.id}</td>
+                <td><a href="/actor/${actor.id}">${actor.id}</a></td>
                 <td>${actor.name}</td>
                 <td>${actor.dateOfBirth}</td>
             </tr>
@@ -62,7 +62,7 @@
         </tr>
         <#list movie.directorList as director>
             <tr>
-                <td>${director.id}</td>
+                <td><a href="/director/${director.id}">${director.id}</a></td>
                 <td>${director.name}</td>
                 <td>${director.dateOfBirth}</td>
             </tr>

@@ -33,7 +33,7 @@
     <input type="submit" title="OK" value="Add"/>
 </form>-->
 
-<#--<div class="table-responsive">
+<div class="table-responsive">
     <caption>User movies</caption>
     <table class="table table-striped">
         <tr>
@@ -45,8 +45,9 @@
         </tr>
     <#list user.movieList as movie>
         <tr>
-            <td>${movie.id}</td>
-            <td>${movie.username}</td>
+        <#--<td>${movie.id}</td>-->
+            <td><a href="/movie/${movie.id}">${movie.id}</a></td>
+            <td>${movie.name}</td>
             <td>${movie.year}</td>
             <td>${movie.genre}</td>
             <td>${movie.price}</td>
@@ -56,7 +57,7 @@
     </#list>
 
     </table>
-</div>-->
+</div>
 <a type="button" href="all" class="button">Back</a>
 
 </body>
