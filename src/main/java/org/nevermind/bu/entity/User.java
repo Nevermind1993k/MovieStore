@@ -1,6 +1,7 @@
 package org.nevermind.bu.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class User {
     private String email;
     private int age;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Movie.class)
+    @JoinColumn(name = "movie_id")
     private List<Movie> movieList= new ArrayList<>();
 
     public User() {

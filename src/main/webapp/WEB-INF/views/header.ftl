@@ -23,6 +23,7 @@
             <li class="active"><a href="/director/all">Directors</a></li>
             <li class="active"><a href="/infoPage">Info</a></li>
         <@security.authorize access="isAuthenticated()">
+            <li class="active"><a href="/cart/all">Cart</a></li>
             <li class="active"><a href="/logout">Logout</a></li>
         </@security.authorize>
         </ul>
