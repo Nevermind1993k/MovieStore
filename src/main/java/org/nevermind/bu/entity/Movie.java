@@ -17,7 +17,7 @@ public class Movie {
     private double price;
     private int year;
     private String genre;
-    //    @OneToMany(fetch = FetchType.EAGER, targetEntity = Actor.class)
+    private String trailerLink;
     @OneToMany(targetEntity = Actor.class, fetch = FetchType.EAGER)
     private List<Actor> actorList;
     @OneToMany(targetEntity = Director.class/*, fetch = FetchType.EAGER*/)
@@ -81,6 +81,14 @@ public class Movie {
 
     public void setDirectorList(List<Director> directorList) {
         this.directorList = directorList;
+    }
+
+    public String getTrailerLink() {
+        return trailerLink;
+    }
+
+    public void setTrailerLink(String trailerLink) {
+        this.trailerLink = trailerLink;
     }
 
     @Override

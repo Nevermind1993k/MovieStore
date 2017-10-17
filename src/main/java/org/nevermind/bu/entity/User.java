@@ -1,7 +1,6 @@
 package org.nevermind.bu.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +13,16 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private int age;
     @Column(nullable = false)
     private int enabled = 1;
     private String email;
-    private int age;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role = Role.ROLE_USER;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Movie.class)
-    @JoinColumn(name = "movie_id")
-    private List<Movie> movieList= new ArrayList<>();
+//    @JoinColumn(name = "movie_id")
+    private List<Movie> movieList = new ArrayList<>();
 
     public User() {
     }
@@ -83,6 +85,14 @@ public class User {
 
     public void addMovieToList(Movie movie) {
         this.movieList.add(movie);
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

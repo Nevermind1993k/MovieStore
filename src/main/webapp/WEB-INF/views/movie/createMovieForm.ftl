@@ -10,6 +10,8 @@
             <input type="number" title="Year" name="year"/><br/>
             Price :<br/>
             <input type="number" step="0.01" title="Price" name="price"/><br/>
+            Trailer :<br/>
+            <input type="text" title="Trailer" name="trailerLink"/><br/>
             <input type="submit" value="Save"/>
         </form>
     </fieldset>

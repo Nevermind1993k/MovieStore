@@ -10,6 +10,7 @@
 <body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 
+This is Cart List
 <#--<div class="table-responsive">
     <caption>Cart list</caption>
     <table class="table table-striped">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>MovieData</title>
@@ -71,9 +71,12 @@
 </div>
 </#if>
 
-<h2>Trailer sample: </h2>
-<#--<iframe width="560" height="315" src="https://www.youtube.com/embed/KPa1_7AF1lM" frameborder="0" allowfullscreen></iframe>-->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J---aiyznGQ" frameborder="0" allowfullscreen></iframe>
+<h2>Trailer: </h2>
+<#--<iframe width="560" height="315" src="https://www.youtube.com/embed/J---aiyznGQ" frameborder="0" allowfullscreen> </iframe>-->
+
+<#if movie.trailerLink ??>
+    ${movie.trailerLink}
+</#if>
 <br/>
 
 <a type="button" href="/movie/all" class="button">Back</a>
