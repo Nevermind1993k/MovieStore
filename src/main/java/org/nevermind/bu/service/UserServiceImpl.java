@@ -2,16 +2,22 @@ package org.nevermind.bu.service;
 
 import org.nevermind.bu.dao.interfaces.UserDao;
 import org.nevermind.bu.dao2.UserDao2;
+import org.apache.log4j.Logger;
 import org.nevermind.bu.entity.User;
 import org.nevermind.bu.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserDao userDao;
@@ -29,10 +35,22 @@ public class UserServiceImpl implements UserService {
 //        return userDao.findByUsername(username);
     }
 
-    @Override
+/*    @Override
     public Collection<User> getAll() {
         return userDao.getAll();
 //        return userDao.findAll();
+    }*/
+
+    @Override
+    public Collection<User> getAll() {
+        List<User> result;
+        try {
+            result = (List<User>) userDao.getAll();
+        } catch (Exception e) {
+            logger.error("Something wrong with findAll", e);
+            result = Collections.EMPTY_LIST;
+        }
+        return result;
     }
 
     @Override

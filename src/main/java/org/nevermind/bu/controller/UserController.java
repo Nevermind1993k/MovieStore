@@ -1,7 +1,7 @@
 package org.nevermind.bu.controller;
 
+import org.apache.log4j.Logger;
 import org.nevermind.bu.entity.User;
-import org.nevermind.bu.service.interfaces.MovieService;
 import org.nevermind.bu.service.interfaces.UserService;
 import org.nevermind.bu.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    private static final Logger logger = Logger.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
