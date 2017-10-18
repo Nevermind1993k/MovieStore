@@ -6,6 +6,7 @@ import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,6 +33,7 @@ public class ActorServiceImpl implements ActorService {
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
         actorDao.delete(actorDao.getById(id));
     }

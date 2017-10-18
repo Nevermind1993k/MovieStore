@@ -26,14 +26,17 @@
     <#list actors as actor>
         <tr>
             <td><a href="/actor/${actor.id}">${actor.id}</a></td>
-            <td>${actor.name}</td>
+        <#if actor.name ??>
+            <td>${actor.name}</td><#else>
+            <td>Null</td></#if>
+        <#if actor.dateOfBirth ??>
             <td>${actor.dateOfBirth}</td>
+        <#else>
+            <td>Null</td></#if>
             <@security.authorize access="hasRole('ADMIN')">
                 <td>
                     <a href="${actor.id}?edit=true">Edit</a>
                     <a href="delete/${actor.id}">Delete</a>
-                <#--<form action="/edit/${actor.id}"><input type='submit' title="Edit" value='E'></form>-->
-                <#--<form action="/delete/${actor.id}"><input type='submit' title="Delete" value='X'></form>-->
                 </td>
             </@security.authorize>
         </tr>

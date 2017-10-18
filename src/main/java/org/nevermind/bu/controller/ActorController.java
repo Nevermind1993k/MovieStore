@@ -44,17 +44,17 @@ public class ActorController {
         return "editActor";
     }
 
-    @PostMapping("editActor")
+    @PostMapping("/update")
     public String editActor(@ModelAttribute Actor actor, Model model) {
         actorService.update(actor);
-        return "redirect:edit/" + actor.getId();
+        return "redirect:" + actor.getId();
     }
 
     @GetMapping("/delete/{id}")
     public String deleteActor(@PathVariable("id") int id) {
         actorService.delete(id);
 //        return "redirect:/actor/all";
-        return "redirect:all";
+        return "redirect:/actor/all";
     }
 
 

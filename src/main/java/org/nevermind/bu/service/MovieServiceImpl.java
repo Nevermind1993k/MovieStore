@@ -5,6 +5,7 @@ import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,6 +32,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
         movieDao.delete(movieDao.getById(id));
     }

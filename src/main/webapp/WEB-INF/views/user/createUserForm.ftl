@@ -20,6 +20,8 @@
             Name :&thinsp;<input type="text" title="Name"  name="username"/><br/>
             Email :&nbsp;<input type="text" title="Email"  name="email"/><br/>
             Age :&#8194;&nbsp; <input type="number" title="Age"  name="age"/><br/>
+            Pass :&nbsp;<input type="text" title="Password"  name="password"/><br/>
+            Role: <input type="text" title="Role"  name="role" /><br/>
             <input type="submit" value="Create"/>
         </form>
     </fieldset>

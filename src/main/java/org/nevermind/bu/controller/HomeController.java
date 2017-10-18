@@ -19,6 +19,11 @@ public class HomeController {
         return "loginPage";
     }
 
+    @GetMapping("/registerPage")
+    public String registerPage() {
+        return "registerPage";
+    }
+
     @GetMapping("/error_page")
     public String errorPage() {
         return "errorPage";
@@ -28,4 +33,5 @@ public class HomeController {
     public String infoPage() {
         return "infoPage";
     }
+
 }

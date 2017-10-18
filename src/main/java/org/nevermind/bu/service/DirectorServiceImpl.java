@@ -5,6 +5,7 @@ import org.nevermind.bu.entity.Director;
 import org.nevermind.bu.service.interfaces.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,6 +33,7 @@ public class DirectorServiceImpl implements DirectorService {
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
         directorDao.delete(directorDao.getById(id));
     }

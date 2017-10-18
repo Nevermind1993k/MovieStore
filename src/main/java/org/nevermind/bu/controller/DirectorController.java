@@ -44,17 +44,17 @@ public class DirectorController {
         return "editDirector";
     }
 
-    @PostMapping("editDirector")
+    @PostMapping("/update")
     public String editDirector(@ModelAttribute Director director, Model model) {
         directorService.update(director);
-        return "redirect:edit/" + director.getId();
+        return  "redirect:" + director.getId();
     }
 
     @GetMapping("/delete/{id}")
     public String deleteDirector(@PathVariable("id") int id) {
         directorService.delete(id);
 //        return "redirect:/director/all";
-        return "redirect:all";
+        return "redirect:/director/all";
     }
 
 }

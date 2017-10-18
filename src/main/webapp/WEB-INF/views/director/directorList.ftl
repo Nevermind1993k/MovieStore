@@ -25,15 +25,17 @@
         </tr>
     <#list directors as director>
         <tr>
-            <td><a href="/director/${director.id}">${director.id}</a></td>
-            <td>${director.name}</td>
-            <td>${director.dateOfBirth}</td>
+        <td><a href="/director/${director.id}">${director.id}</a>
+            <#if director.name ??>
+                <td>${director.name}</td><#else>
+                <td>Null</td></#if>
+            <#if director.dateOfBirth ??>
+                <td>${director.dateOfBirth}</td><#else>
+                <td>Null</td></#if>
             <@security.authorize access="hasRole('ADMIN')">
                 <td>
                     <a href="${director.id}?edit=true">Edit</a>
                     <a href="delete/${director.id}">Delete</a>
-                <#--<form action="/edit/${director.id}"><input type='submit' title="Edit" value='E'></form>-->
-                <#--<form action="/delete/${director.id}"><input type='submit' title="Delete" value='X'></form>-->
                 </td>
             </@security.authorize>
         </tr>
@@ -41,7 +43,7 @@
     </table>
 </div>
 <@security.authorize access="hasRole('ADMIN')">
-<#include "createDirectorForm.ftl"/>
+    <#include "createDirectorForm.ftl"/>
 </@security.authorize>
 </body>
 </html>

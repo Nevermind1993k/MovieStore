@@ -6,7 +6,7 @@
 </head>
 <body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
-<div class="table-responsive" >
+<div class="table-responsive">
     <caption>Movie info</caption>
     <table class="table table-striped">
         <tr>
@@ -15,14 +15,27 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${movie.name}</td>
+        <#if movie.name ??>
+            <td>${movie.name}</td><#else>
+            <td>Null</td></#if>
         </tr>
         <tr>
             <td>Genre</td>
-            <td>${movie.genre}</td>
+        <#if movie.genre ??>
+            <td>${movie.genre}</td><#else>
+            <td>Null</td></#if>
         </tr>
-        <td>Year</td>
-        <td>${movie.year}</td>
+        <tr>
+            <td>Year</td>
+        <#if movie.year ??>
+            <td>${movie.year}</td><#else>
+            <td>Null</td></#if>
+        </tr>
+        <tr>
+            <td>Price</td>
+        <#if movie.price ??>
+            <td>${movie.price}</td><#else>
+            <td>Null</td></#if>
         </tr>
     </table>
 </div>
@@ -42,8 +55,12 @@
         <#list movie.actorList as actor>
             <tr>
                 <td><a href="/actor/${actor.id}">${actor.id}</a></td>
-                <td>${actor.name}</td>
-                <td>${actor.dateOfBirth}</td>
+                <#if actor.name ??>
+                    <td>${actor.name}</td><#else>
+                    <td>Null</td></#if>
+                <#if actor.dateOfBirth ??>
+                    <td>${actor.dateOfBirth}</td><#else>
+                    <td>Null</td></#if>
             </tr>
         </#list>
     </table>
@@ -63,19 +80,22 @@
         <#list movie.directorList as director>
             <tr>
                 <td><a href="/director/${director.id}">${director.id}</a></td>
-                <td>${director.name}</td>
-                <td>${director.dateOfBirth}</td>
+                <#if director.name ??>
+                    <td>${director.name}</td><#else>
+                    <td>Null</td></#if>
+                <#if director.dateOfBirth ??>
+                    <td>${director.dateOfBirth}</td><#else>
+                    <td>Null</td></#if>
             </tr>
         </#list>
     </table>
 </div>
 </#if>
 
+<#if movie.trailerLink ??>
 <h2>Trailer: </h2>
 <#--<iframe width="560" height="315" src="https://www.youtube.com/embed/J---aiyznGQ" frameborder="0" allowfullscreen> </iframe>-->
-
-<#if movie.trailerLink ??>
-    ${movie.trailerLink}
+${movie.trailerLink}
 </#if>
 <br/>
 

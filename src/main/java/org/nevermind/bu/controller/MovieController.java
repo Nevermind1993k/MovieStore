@@ -44,17 +44,17 @@ public class MovieController {
         return "editMovie";
     }
 
-    @PostMapping("editMovie")
+    @PostMapping("/update")
     public String editMovie(@ModelAttribute Movie movie, Model model) {
         movieService.update(movie);
-        return "redirect:edit/" + movie.getId();
+        return "redirect:" + movie.getId();
     }
 
     @GetMapping("/delete/{id}")
     public String deleteMovie(@PathVariable("id") int id) {
         movieService.delete(id);
 //        return "redirect:/movies";
-        return "redirect:all";
+        return "redirect:/movie/all";
 
     }
 

@@ -21,10 +21,15 @@
             <li class="active"><a href="/movie/all">Movies</a></li>
             <li class="active"><a href="/actor/all">Actors</a></li>
             <li class="active"><a href="/director/all">Directors</a></li>
+        <@security.authorize access="permitAll">
             <li class="active"><a href="/infoPage">Info</a></li>
+        </@security.authorize>
         <@security.authorize access="isAuthenticated()">
             <li class="active"><a href="/cart/all">Cart</a></li>
             <li class="active"><a href="/logout">Logout</a></li>
+        </@security.authorize>
+        <@security.authorize access="isAnonymous()">
+            <li class="active"><a href="/loginPage">Login</a></li>
         </@security.authorize>
         </ul>
     </div>

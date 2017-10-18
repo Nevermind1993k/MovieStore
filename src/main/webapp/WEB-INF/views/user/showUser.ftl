@@ -15,14 +15,33 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${user.username}</td>
+        <#if user.username ??>
+            <td>${user.username}</td><#else>
+            <td>Null</td></#if>
         </tr>
         <tr>
             <td>Email</td>
-            <td>${user.email}</td>
+        <#if user.email ??>
+            <td>${user.email}</td><#else>
+            <td>Null</td></#if>
         </tr>
-        <td>Age</td>
-        <td>${user.age}</td>
+        <tr>
+            <td>Password</td>
+        <#if user.password ??>
+            <td>${user.password}</td><#else>
+            <td>Null</td></#if>
+        </tr>
+        <tr>
+            <td>Age</td>
+        <#if user.age ??>
+            <td>${user.age}</td><#else>
+            <td>Null</td></#if>
+        </tr>
+        <tr>
+            <td>Role</td>
+        <#if user.role ??>
+            <td>${user.role}</td><#else>
+            <td>Null</td></#if>
         </tr>
     </table>
 </div>

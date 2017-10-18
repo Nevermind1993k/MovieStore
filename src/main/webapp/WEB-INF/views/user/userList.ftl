@@ -20,7 +20,9 @@
             <th>Id</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Pass</th>
             <th>Age</th>
+            <th>Role</th>
         <@security.authorize access="hasRole('ADMIN')">
             <th>Buttons</th>
         </@security.authorize>
@@ -28,9 +30,21 @@
     <#list users as user>
         <tr>
             <td><a href="/user/${user.id}">${user.id}</a></td>
-            <td>${user.username}</td>
-            <td>${user.email}</td>
-            <td>${user.age}</td>
+            <#if user.username ??>
+                <td>${user.username}</td><#else>
+                <td>Null</td></#if>
+            <#if user.email ??>
+                <td>${user.email}</td><#else>
+                <td>Null</td></#if>
+            <#if user.password ??>
+                <td>${user.password}</td><#else>
+                <td>Null</td></#if>
+            <#if user.age ??>
+                <td>${user.age}</td><#else>
+                <td>Null</td></#if>
+            <#if user.role ??>
+                <td>${user.role}</td><#else>
+                <td>Null</td></#if>
             <td>
                 <@security.authorize access="hasRole('ADMIN')">
                     <a href="${user.id}?edit=true">Edit</a>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>ActorData</title>
 </head>
-<body class="container">
+<body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Actor info</caption>
@@ -15,11 +15,15 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${actor.name}</td>
+        <#if actor.name ??>
+            <td>${actor.name}</td><#else>
+            <td>Null</td></#if>
         </tr>
         <tr>
             <td>Date Of Birth</td>
-            <td>${actor.dateOfBirth}</td>
+        <#if actor.dateOfBirth ??>
+            <td>${actor.dateOfBirth}</td><#else>
+            <td>Null</td></#if>
         </tr>
     </table>
 </div>
@@ -34,16 +38,22 @@
             <td>Year</td>
             <td>Genre</td>
         </tr>
-    <#list actor.movieList as movie>
-        <tr>
-            <td><a href="/movie/${movie.id}">${movie.id}</a></td>
-            <td>${movie.name}</td>
-            <td>${movie.year}</td>
-            <td>${movie.genre}</td>
-        </tr>
-    <#--<#else>-->
+        <#list actor.movieList as movie>
+            <tr>
+                <td><a href="/movie/${movie.id}">${movie.id}</a></td>
+                <#if movie.name ??>
+                    <td>${movie.name}</td><#else>
+                    <td>Null</td></#if>
+                <#if movie.year ??>
+                    <td>${movie.year}</td><#else>
+                    <td>Null</td></#if>
+                <#if movie.genre ??>
+                    <td>${movie.genre}</td><#else>
+                    <td>Null</td></#if>
+            </tr>
+        <#--<#else>-->
         <#--<h1>Empty movies</h1>-->
-    </#list>
+        </#list>
 
     </table>
 </div>

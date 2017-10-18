@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>DirectorData</title>
 </head>
-<body class="container">
+<body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 <div class="table-responsive">
     <caption>Director info</caption>
@@ -15,11 +15,15 @@
         </tr>
         <tr>
             <td>Name</td>
-            <td>${director.name}</td>
+        <#if director.name ??>
+            <td>${director.name}</td><#else>
+            <td>Null</td></#if>
         </tr>
         <tr>
             <td>Date Of Birth</td>
-            <td>${director.dateOfBirth}</td>
+        <#if director.dateOfBirth ??>
+            <td>${director.dateOfBirth}</td><#else>
+            <td>Null</td></#if>
         </tr>
     </table>
 </div>
@@ -37,9 +41,15 @@
         <#list director.movieList as movie>
             <tr>
                 <td><a href="/movie/${movie.id}">${movie.id}</a></td>
-                <td>${movie.name}</td>
-                <td>${movie.year}</td>
-                <td>${movie.genre}</td>
+                <#if movie.name ??>
+                    <td>${movie.name}</td><#else>
+                    <td>Null</td></#if>
+                <#if movie.year ??>
+                    <td>${movie.year}</td><#else>
+                    <td>Null</td></#if>
+                <#if movie.genre ??>
+                    <td>${movie.genre}</td><#else>
+                    <td>Null</td></#if>
             </tr>
         <#--<#else>-->
         <#--<h1>Empty movies</h1>-->
