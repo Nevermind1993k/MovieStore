@@ -22,7 +22,7 @@
             Age :&#8194;&nbsp; <input type="number" title="Age"  name="age"/><br/>
             Pass :&nbsp;<input type="text" title="Password"  name="password"/><br/>
             Enabl : <input type="number" title="Enabled"  name="enabled"/><br/>
-            Role: <input type="text" title="Role"  name="role" /><br/>
+            <#--Role: <input type="text" title="Role"  name="role" /><br/>-->
             <input type="submit" value="Create"/>
         </form>
     </fieldset>

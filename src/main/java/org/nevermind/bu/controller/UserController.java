@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -32,6 +33,16 @@ public class UserController {
             return "showUser";
         }
     }
+
+    /*@GetMapping("/somelink/{id}")
+    public String getByName(@PathVariable("id") int id, Model model) {
+        *//*if (principal != null) {
+            userService.getByName(principal.getName());
+        }*//*
+        User user123 = userService.getById(id);
+        model.addAttribute("user", userService.getByName(user123.getUsername()));
+        return "showUser";
+    }*/
 
     @GetMapping("/all")
     public String getAll(Model model) {

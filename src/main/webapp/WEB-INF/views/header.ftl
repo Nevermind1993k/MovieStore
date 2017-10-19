@@ -8,8 +8,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <#assign security=JspTaglibs["http://www.springframework.org/security/tags"]/>
+<#import "/spring.ftl" as spring/>
 
-<nav class="navbar navbar-inverse">
+<#--<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Movie-Store</a>
@@ -34,9 +35,8 @@
         </@security.authorize>
         </ul>
     </div>
-</nav>
+</nav>-->
 
-<#--
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -46,7 +46,7 @@
         <@security.authorize access="hasRole('ADMIN')">
             <li class="active"><a href="/user/all"><@spring.message "header.users"/></a></li>
         </@security.authorize>
-            <li class="active"><a href="/movie/all">><@spring.message "header.movies"/></a></li>
+            <li class="active"><a href="/movie/all"><@spring.message "header.movies"/></a></li>
             <li class="active"><a href="/actor/all"><@spring.message "header.actors"/></a></li>
             <li class="active"><a href="/director/all"><@spring.message "header.directors"/></a></li>
         <@security.authorize access="permitAll">
@@ -62,4 +62,4 @@
         </@security.authorize>
         </ul>
     </div>
-</nav>-->
+</nav>
