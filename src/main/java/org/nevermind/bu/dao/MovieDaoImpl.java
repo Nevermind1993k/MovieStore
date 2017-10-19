@@ -2,6 +2,8 @@ package org.nevermind.bu.dao;
 
 import org.nevermind.bu.dao.interfaces.MovieDao;
 import org.nevermind.bu.entity.Movie;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,5 +45,10 @@ public class MovieDaoImpl implements MovieDao {
     public List<Movie> getAll() {
         return entityManager.createQuery("SELECT m FROM Movie m", Movie.class)
                 .getResultList();
+    }
+
+    @Override
+    public Page<Movie> getAll(Pageable pageable) {
+        return null;
     }
 }

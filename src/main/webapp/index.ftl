@@ -12,6 +12,7 @@
     <h3> Welcome to Movie-Store </h3>
 <@security.authorize access="isAuthenticated()">
     <h1><@security.authentication property="principal.username"/></h1>
+    <#--<h1><@security.authentication property="principal.id"/></h1>-->
 </@security.authorize><br/>
 <@security.authorize access="isAnonymous()">
     <h3><a href="/loginPage.ftl">Login</a></h3>

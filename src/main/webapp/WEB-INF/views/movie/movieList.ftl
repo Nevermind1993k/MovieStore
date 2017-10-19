@@ -12,11 +12,11 @@
     <caption>Movies list</caption>
     <table class="table table-striped">
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Genre</th>
-            <th>Year</th>
-            <th>Price</th>
+            <th><a href="all?order=id">Id</a></th>
+            <th><a href="all?order=name">Name</a></th>
+            <th><a href="all?order=genre">Genre</a></th>
+            <th><a href="all?order=year">Year</a></th>
+            <th><a href="all?order=price">Price</a></th>
         <@security.authorize access="hasRole('ADMIN')">
             <th>Buttons</th>
         </@security.authorize>
@@ -43,8 +43,6 @@
                 <td>
                     <a href="${movie.id}?edit=true">Edit</a> |
                     <a href="delete/${movie.id}">Delete</a>
-                <#--<form action="/edit/${movie.id}"><input type='submit' title="Edit" value='E'></form>-->
-                <#--<form action="/delete/${movie.id}"><input type='submit' title="Delete" value='X'></form>-->
                 </td>
             </@security.authorize>
             <@security.authorize access="isAuthenticated()">
@@ -55,6 +53,11 @@
         </tr>
     </#list>
     </table>
+<#if pages??>
+    <#list pages as page>
+        Pages: <span><a href="/movie/all?page=${page}">${page} </a></span>
+    </#list>
+</#if>
 </div>
 <@security.authorize access="hasRole('ADMIN')">
     <#include "createMovieForm.ftl"/>

@@ -38,6 +38,12 @@
             <td>Null</td></#if>
         </tr>
         <tr>
+            <td>Enabled</td>
+        <#if user.enabled ??>
+            <td>${user.enabled}</td><#else>
+            <td>Null</td></#if>
+        </tr>
+        <tr>
             <td>Role</td>
         <#if user.role ??>
             <td>${user.role}</td><#else>

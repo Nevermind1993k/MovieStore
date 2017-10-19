@@ -3,9 +3,15 @@ package org.nevermind.bu.controller;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Controller
 @RequestMapping("/movie")
@@ -25,8 +31,29 @@ public class MovieController {
     }
 
     @GetMapping("/all")
-    public String getAll(Model model) {
-        model.addAttribute("movies", movieService.getAll());
+    public String getAll(Model model,
+                         @RequestParam(value = "page", required = false) Integer page,
+                         @RequestParam(value = "size", required = false) Integer size,
+                         @RequestParam(value = "order", required = false) String order) {
+        int totalPages = 0;
+        if (page != null) {
+            size = 10;
+            Page<Movie> pages = movieService.getAll(page, size, order);
+            totalPages = pages.getTotalPages();
+            model.addAttribute("total", totalPages);
+            model.addAttribute("movies", pages.getContent());
+        } else if (!StringUtils.isEmpty(order)) {
+            model.addAttribute("movies", movieService.getAll(0, 100, order).getContent());
+        } else {
+            Collection<Movie> all = movieService.getAll();
+            model.addAttribute("movies", all);
+            totalPages = all.size() / 2;
+        }
+        List<Integer> pagesCount = new ArrayList<>();
+        for (int i = 0; i < totalPages; i++) {
+            pagesCount.add(i);
+        }
+        model.addAttribute("pages", pagesCount);
         return "movieList";
     }
 

@@ -26,6 +26,7 @@
         </@security.authorize>
         <@security.authorize access="isAuthenticated()">
             <li class="active"><a href="/cart/all">Cart</a></li>
+        <li class="active"><a href="/user/1"><@security.authentication property="principal.username"/></a></li>
             <li class="active"><a href="/logout">Logout</a></li>
         </@security.authorize>
         <@security.authorize access="isAnonymous()">

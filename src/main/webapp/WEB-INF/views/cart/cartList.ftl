@@ -11,7 +11,7 @@
 <#include "*/header.ftl">
 
 This is Cart List
-<#if cart.movieList ? size !=0>
+<#--<#if cart.movieList ? size !=0>
 <div class="table-responsive">
     <caption>Movies in Cart</caption>
     <table class="table table-striped">
@@ -33,7 +33,7 @@ This is Cart List
     </#list>
     </table>
 </div>
-</#if>
+</#if>-->
 </body>
 
 </html>

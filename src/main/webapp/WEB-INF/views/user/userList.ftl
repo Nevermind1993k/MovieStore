@@ -22,6 +22,7 @@
             <th>Email</th>
             <th>Pass</th>
             <th>Age</th>
+            <th>Enabled</th>
             <th>Role</th>
         <@security.authorize access="hasRole('ADMIN')">
             <th>Buttons</th>
@@ -41,6 +42,9 @@
                 <td>Null</td></#if>
             <#if user.age ??>
                 <td>${user.age}</td><#else>
+                <td>Null</td></#if>
+            <#if user.enabled ??>
+                <td>${user.enabled}</td><#else>
                 <td>Null</td></#if>
             <#if user.role ??>
                 <td>${user.role}</td><#else>
