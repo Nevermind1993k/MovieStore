@@ -14,7 +14,7 @@ public class User implements Serializable {
     private int id;
     private String username;
     private String password;
-    private int age;
+    private Integer age = 0;
     @Column(nullable = false)
     private int enabled = 1;
     private String email;
@@ -68,11 +68,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

@@ -23,6 +23,23 @@
     <br/>
     <br/>
     <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <a href="/?mylocale=en">English </a> | <a href="/?mylocale=ua">Ukraine </a>
 <#--<h3> <@spring.message "title"/></h3>
 <h3>${.locale}</h3>-->
