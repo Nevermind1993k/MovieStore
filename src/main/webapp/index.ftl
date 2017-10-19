@@ -18,6 +18,9 @@
     <h3><a href="/loginPage.ftl">Login</a></h3>
     <h3><a href="/registerPage.ftl">Register</a></h3>
 </@security.authorize>
+    <#--<a href="/?mylocale=en">English </a> | <a href="/?mylocale=ua">Ukraine </a>
+    <h3> <@spring.message "title"/></h3>
+    <h3>${.locale}</h3>-->
 </div>
 </body>
 </html>

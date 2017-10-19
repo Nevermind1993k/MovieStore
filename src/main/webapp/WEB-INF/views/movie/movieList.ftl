@@ -54,8 +54,9 @@
     </#list>
     </table>
 <#if pages??>
+    Pages:
     <#list pages as page>
-        Pages: <span><a href="/movie/all?page=${page}">${page} </a></span>
+        <span><a href="/movie/all?page=${page}">${page} </a></span>
     </#list>
 </#if>
 </div>
