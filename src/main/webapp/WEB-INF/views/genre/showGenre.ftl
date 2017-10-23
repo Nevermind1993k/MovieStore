@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DirectorData</title>
+    <title>GenreData</title>
 </head>
 <body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 <div class="table-responsive">
-    <caption>Director info</caption>
+    <caption>Genre info</caption>
     <table class="table table-striped">
         <tr>
             <td>Id</td>
-            <td>${director.id}</a></td>
+            <td>${genre.id}</a></td>
         </tr>
         <tr>
             <td>Name</td>
-        <#if director.name ??>
-            <td>${director.name}</td><#else>
-            <td>Null</td></#if>
-        </tr>
-        <tr>
-            <td>Date Of Birth</td>
-        <#if director.dateOfBirth ??>
-            <td>${director.dateOfBirth}</td><#else>
+        <#if genre.name ??>
+            <td>${genre.name}</td><#else>
             <td>Null</td></#if>
         </tr>
     </table>
 </div>
 <br>
-<#if director.movieList ? size !=0>
+<#if genre.movieList ? size !=0>
 <div class="table-responsive">
-    <caption>Director movies</caption>
+    <caption>Genre movies</caption>
     <table class="table table-striped">
         <tr>
             <td>Id</td>
@@ -38,7 +32,7 @@
             <td>Year</td>
             <td>Genre</td>
         </tr>
-        <#list director.movieList as movie>
+        <#list genre.movieList as movie>
             <tr>
                 <td><a href="/movie/${movie.id}">${movie.id}</a></td>
                 <#if movie.name ??>
@@ -54,11 +48,12 @@
         <#--<#else>-->
         <#--<h1>Empty movies</h1>-->
         </#list>
+
     </table>
 </div>
 </#if>
 
-<a type="button" href="/director/all" class="button">Back</a>
+<a type="button" href="/genre/all" class="button">Back</a>
 
 <div style="position: relative; width: 600px; height: 800px;">
     <div style="position: absolute; bottom: 5px">

@@ -49,12 +49,13 @@
             <li class="active"><a href="/movie/all"><@spring.message "header.movies"/></a></li>
             <li class="active"><a href="/actor/all"><@spring.message "header.actors"/></a></li>
             <li class="active"><a href="/director/all"><@spring.message "header.directors"/></a></li>
+            <li class="active"><a href="/genre/all"><@spring.message "header.genres"/></a></li>
         <@security.authorize access="permitAll">
             <li class="active"><a href="/infoPage"><@spring.message "header.info"/></a></li>
         </@security.authorize>
         <@security.authorize access="isAuthenticated()">
-            <li class="active"><a href="/cart/all"><@spring.message "header.cart"/></a></li>
-            <li class="active"><a href="/user/1"><@security.authentication property="principal.username"/></a></li>
+            <#--<li class="active"><a href="/cart/all"><@spring.message "header.cart"/></a></li>-->
+            <#--<li class="active"><a href="/user/1"><@security.authentication property="principal.username"/></a></li>-->
             <li class="active"><a href="/logout"><@spring.message "header.logout"/></a></li>
         </@security.authorize>
         <@security.authorize access="isAnonymous()">
@@ -63,3 +64,5 @@
         </ul>
     </div>
 </nav>
+
+

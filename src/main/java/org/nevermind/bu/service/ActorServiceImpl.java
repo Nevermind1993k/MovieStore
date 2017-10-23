@@ -1,6 +1,7 @@
 package org.nevermind.bu.service;
 
 import org.nevermind.bu.dao.interfaces.ActorDao;
+import org.nevermind.bu.dao2.ActorDao2;
 import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.ActorService;
@@ -15,16 +16,17 @@ import java.util.List;
 public class ActorServiceImpl implements ActorService {
 
     @Autowired
-    ActorDao actorDao;
+    ActorDao2 actorDao;
 
     @Override
     public Actor getById(int id) {
-        return actorDao.getById(id);
+        return actorDao.findById(id);
     }
+
 
     @Override
     public Collection<Actor> getAll() {
-        return actorDao.getAll();
+        return actorDao.findAll();
     }
 
     @Override
@@ -35,12 +37,12 @@ public class ActorServiceImpl implements ActorService {
     @Override
     @Transactional
     public void delete(int id) {
-        actorDao.delete(actorDao.getById(id));
+        actorDao.delete(id);
     }
 
     @Override
     public void update(Actor actor) {
-        actorDao.update(actor);
+        actorDao.save(actor);
     }
 }
 

@@ -37,7 +37,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
         freeMarkerConfigurer.setTemplateLoaderPaths("/", "/WEB-INF/views/", "/WEB-INF/views/user/","/WEB-INF/views/actor/",
-                "/WEB-INF/views/movie/","/WEB-INF/views/director/","/WEB-INF/views/cart/");
+                "/WEB-INF/views/movie/","/WEB-INF/views/director/","/WEB-INF/views/cart/","/WEB-INF/views/genre/");
         freeMarkerConfigurer.setDefaultEncoding("UTF-8");
         return freeMarkerConfigurer;
     }

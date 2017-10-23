@@ -26,17 +26,16 @@
     <#list actors as actor>
         <tr>
             <td><a href="/actor/${actor.id}">${actor.id}</a></td>
-        <#if actor.name ??>
-            <td>${actor.name}</td><#else>
-            <td>Null</td></#if>
-        <#if actor.dateOfBirth ??>
-            <td>${actor.dateOfBirth}</td>
-        <#else>
-            <td>Null</td></#if>
+            <#if actor.name ??>
+                <td>${actor.name}</td><#else>
+                <td>Null</td></#if>
+            <#if actor.dateOfBirth ??>
+                <td>${actor.dateOfBirth}</td>
+            <#else>
+                <td>Null</td></#if>
             <@security.authorize access="hasRole('ADMIN')">
                 <td>
-                    <a href="${actor.id}?edit=true">Edit</a>
-                    <a href="delete/${actor.id}">Delete</a>
+                    <a href="${actor.id}?edit=true">Edit</a> | <a href="delete/${actor.id}">Delete</a>
                 </td>
             </@security.authorize>
         </tr>
@@ -44,7 +43,13 @@
     </table>
 </div>
 <@security.authorize access="hasRole('ADMIN')">
-<#include "createActorForm.ftl"/>
+    <#include "createActorForm.ftl"/>
 </@security.authorize>
+
+<div style="position: relative; width: 600px; height: 800px;">
+    <div style="position: absolute; bottom: 5px">
+        <a href="/?mylocale=en">English </a> | <a href="/?mylocale=ua">Ukraine </a>
+    </div>
+</div>
 </body>
 </html>

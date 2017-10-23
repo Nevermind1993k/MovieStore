@@ -16,13 +16,15 @@ public class Movie {
     private String name;
     private double price;
     private int year;
-    private String genre;
     private String trailerLink;
     @OneToMany(targetEntity = Actor.class, fetch = FetchType.EAGER)
     private List<Actor> actorList;
     @OneToMany(targetEntity = Director.class/*, fetch = FetchType.EAGER*/)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Director> directorList;
+    @OneToMany(targetEntity = Genre.class)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Genre> genreList;
 
     public Movie() {
     }
@@ -59,12 +61,12 @@ public class Movie {
         this.year = year;
     }
 
-    public String getGenre() {
-        return genre;
+    public List<Genre> getGenreList() {
+        return genreList;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenreList(List<Genre> genreList) {
+        this.genreList = genreList;
     }
 
     public List<Actor> getActorList() {
@@ -98,7 +100,6 @@ public class Movie {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", year=" + year +
-                ", genre='" + genre + '\'' +
                 '}';
     }
 }

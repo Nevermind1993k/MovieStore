@@ -51,8 +51,7 @@
                 <td>Null</td></#if>
             <td>
                 <@security.authorize access="hasRole('ADMIN')">
-                    <a href="${user.id}?edit=true">Edit</a>
-                    <a href="delete/${user.id}">Delete</a>
+                    <a href="${user.id}?edit=true">Edit</a> | <a href="delete/${user.id}">Delete</a>
                 </@security.authorize>
             <#--<form action="${user.id}?edit=true"><input type='submit' title="Edit" value='E'></form>-->
             <#--<form action="delete/${user.id}"><input type='submit' title="Delete" value='X'></form>-->
@@ -62,5 +61,12 @@
     </table>
 </div>
 <#include "createUserForm.ftl"/>
+
+<div style="position: relative; width: 600px; height: 800px;">
+    <div style="position: absolute; bottom: 5px">
+        <a href="/?mylocale=en">English </a> | <a href="/?mylocale=ua">Ukraine </a>
+    </div>
+</div>
+
 </body>
 </html>

@@ -5,13 +5,17 @@
     <title>UserData</title>
 </head>
 
-<body class="container">
+<body class="container" style="background-color: lightgrey">
+<#--<#include "*/header.ftl">-->
 
 <#if errors??>
     <#list errors as error>
-    <h1>error</h1><br>
+    <td>${error}</td>
+    <br/>
     </#list>
 </#if>
+
+<br/>
 
 <div id="content">
     <fieldset>
@@ -30,5 +34,9 @@
 </div>
 
 <#--<a type="button" href="/all" class="button">Back</a>-->
+<#if errors??>
+<br/>
+<a href="/registerPage">Back </a>
+</#if>
 </body>
 </html>

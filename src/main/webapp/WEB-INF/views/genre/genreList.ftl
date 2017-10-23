@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Director List</title>
+    <title>Genre List</title>
     <style>
         form {
             display: inline;
@@ -13,28 +13,24 @@
 <body class="container" style="background-color: lightgrey">
 <#include "*/header.ftl">
 <div class="table-responsive">
-    <caption>Directors list</caption>
+    <caption>Genre list</caption>
     <table class="table table-striped">
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Date Of Birth</th>
         <@security.authorize access="hasRole('ADMIN')">
             <th>Buttons</th>
         </@security.authorize>
         </tr>
-    <#list directors as director>
+    <#list genres as genre>
         <tr>
-        <td><a href="/director/${director.id}">${director.id}</a>
-            <#if director.name ??>
-                <td>${director.name}</td><#else>
-                <td>Null</td></#if>
-            <#if director.dateOfBirth ??>
-                <td>${director.dateOfBirth}</td><#else>
+            <td><a href="/genre/${genre.id}">${genre.id}</a></td>
+            <#if genre.name ??>
+                <td>${genre.name}</td><#else>
                 <td>Null</td></#if>
             <@security.authorize access="hasRole('ADMIN')">
                 <td>
-                    <a href="${director.id}?edit=true">Edit</a> | <a href="delete/${director.id}">Delete</a>
+                    <a href="${genre.id}?edit=true">Edit</a> | <a href="delete/${genre.id}">Delete</a>
                 </td>
             </@security.authorize>
         </tr>
@@ -42,7 +38,7 @@
     </table>
 </div>
 <@security.authorize access="hasRole('ADMIN')">
-    <#include "createDirectorForm.ftl"/>
+    <#include "createGenreForm.ftl"/>
 </@security.authorize>
 
 <div style="position: relative; width: 600px; height: 800px;">

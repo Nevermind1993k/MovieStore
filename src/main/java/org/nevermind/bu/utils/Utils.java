@@ -9,7 +9,7 @@ public class Utils {
 
     public static List<String> validate(User user) {
         List<String> result = new ArrayList<>();
-        if (user.getUsername().length() <= 4) {
+        if (user.getUsername().length() < 4) {
             result.add("Name must be more or equals then 4 symbols");
         }
         return result;

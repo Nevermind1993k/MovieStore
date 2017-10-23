@@ -41,20 +41,20 @@
                 <td>Null</td></#if>
             <@security.authorize access="hasRole('ADMIN')">
                 <td>
-                    <a href="${movie.id}?edit=true">Edit</a> |
-                    <a href="delete/${movie.id}">Delete</a>
+                    <a href="${movie.id}?edit=true">Edit</a> | <a href="delete/${movie.id}">Delete</a>
                 </td>
             </@security.authorize>
             <@security.authorize access="isAuthenticated()">
                 <td>
-                    <a href="addToCart/${movie.id}">Add to Cart</a>
+                    <#--<a href="addToCart/${movie.id}">Add to Cart</a>-->
+                    <a href="buyPage">Buy</a>
                 </td>
             </@security.authorize>
         </tr>
     </#list>
     </table>
 <#if pages??>
-Pages:
+    Pages:
     <#list pages as page>
         <span><a href="/movie/all?page=${page}">${page}</a> | </span>
     </#list>
@@ -63,5 +63,13 @@ Pages:
 <@security.authorize access="hasRole('ADMIN')">
     <#include "createMovieForm.ftl"/>
 </@security.authorize>
+
+<div style="position: relative; width: 600px; height: 800px;">
+    <div style="position: absolute; bottom: 5px">
+        <a href="/?mylocale=en">English </a> | <a href="/?mylocale=ua">Ukraine </a>
+    </div>
+</div>
 </body>
+
+
 </html>

@@ -47,7 +47,8 @@ public class MovieController {
         } else {
             Collection<Movie> all = movieService.getAll();
             model.addAttribute("movies", all);
-            totalPages = all.size() / 2;
+            totalPages = all.size() / ((all.size()) / 2);
+//            totalPages = 5;
         }
         List<Integer> pagesCount = new ArrayList<>();
         for (int i = 0; i < totalPages; i++) {
