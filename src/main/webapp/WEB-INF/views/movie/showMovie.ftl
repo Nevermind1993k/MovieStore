@@ -91,6 +91,27 @@
     </table>
 </div>
 </#if>
+<#--GenreList-->
+<br>
+<#if movie.genreList ? size !=0>
+<div class="table-responsive">
+    <caption>Genres:</caption>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Name</a></td>
+        </tr>
+        <#list movie.genreList as genre>
+            <tr>
+                <td><a href="/genre/${genre.id}">${genre.id}</a></td>
+                <#if genre.name ??>
+                    <td>${genre.name}</td><#else>
+                    <td>Null</td></#if>
+            </tr>
+        </#list>
+    </table>
+</div>
+</#if>
 
 <#if movie.trailerLink ??>
 <h2>Trailer: </h2>

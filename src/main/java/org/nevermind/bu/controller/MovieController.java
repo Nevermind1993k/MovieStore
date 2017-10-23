@@ -47,7 +47,11 @@ public class MovieController {
         } else {
             Collection<Movie> all = movieService.getAll();
             model.addAttribute("movies", all);
-            totalPages = all.size() / ((all.size()) / 2);
+            if (all.size() >= 2) {
+                totalPages = all.size() / ((all.size()) / 2);
+            } else {
+                totalPages = 0;
+            }
 //            totalPages = 5;
         }
         List<Integer> pagesCount = new ArrayList<>();
@@ -83,7 +87,11 @@ public class MovieController {
         movieService.delete(id);
 //        return "redirect:/movies";
         return "redirect:/movie/all";
+    }
 
+    @GetMapping("/buyPage")
+    public String buyPage() {
+        return "buyPage";
     }
 
 }

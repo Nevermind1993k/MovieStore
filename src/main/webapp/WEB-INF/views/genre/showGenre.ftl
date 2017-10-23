@@ -30,7 +30,7 @@
             <td>Id</td>
             <td>Name</a></td>
             <td>Year</td>
-            <td>Genre</td>
+            <#--<td>Genre</td>-->
         </tr>
         <#list genre.movieList as movie>
             <tr>
@@ -41,9 +41,9 @@
                 <#if movie.year ??>
                     <td>${movie.year}</td><#else>
                     <td>Null</td></#if>
-                <#if movie.genre ??>
+                <#--<#if movie.genre ??>
                     <td>${movie.genre}</td><#else>
-                    <td>Null</td></#if>
+                    <td>Null</td></#if>-->
             </tr>
         <#--<#else>-->
         <#--<h1>Empty movies</h1>-->

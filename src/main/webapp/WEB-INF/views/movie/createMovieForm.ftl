@@ -4,8 +4,8 @@
         <form action="newMovie" method="post" name="movie" class="form-group">
             Name :&thinsp;<br/>
             <input type="text" title="Name" name="name"/><br/>
-            Genre :&thinsp;<br/>
-            <input type="text" title="Genre" name="genre"/><br/>
+            <#--Genre :&thinsp;<br/>
+            <input type="text" title="Genre" name="genre"/><br/>-->
             Year :<br/>
             <input type="number" title="Year" name="year"/><br/>
             Price :<br/>

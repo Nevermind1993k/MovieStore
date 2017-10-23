@@ -14,7 +14,7 @@
         <tr>
             <th><a href="all?order=id">Id</a></th>
             <th><a href="all?order=name">Name</a></th>
-            <th><a href="all?order=genre">Genre</a></th>
+            <#--<th><a href="all?order=genre">Genre</a></th>-->
             <th><a href="all?order=year">Year</a></th>
             <th><a href="all?order=price">Price</a></th>
         <@security.authorize access="hasRole('ADMIN')">
@@ -30,9 +30,9 @@
             <#if movie.name ??>
                 <td>${movie.name}</td><#else>
                 <td>Null</td></#if>
-            <#if movie.genre ??>
+            <#--<#if movie.genre ??>
                 <td>${movie.genre}</td><#else>
-                <td>Null</td></#if>
+                <td>Null</td></#if>-->
             <#if movie.year ??>
                 <td>${movie.year}</td><#else>
                 <td>Null</td></#if>
@@ -47,7 +47,7 @@
             <@security.authorize access="isAuthenticated()">
                 <td>
                     <#--<a href="addToCart/${movie.id}">Add to Cart</a>-->
-                    <a href="buyPage">Buy</a>
+                    <a href="/movie/buyPage">Buy</a>
                 </td>
             </@security.authorize>
         </tr>
