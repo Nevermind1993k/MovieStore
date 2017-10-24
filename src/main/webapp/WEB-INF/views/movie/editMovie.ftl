@@ -10,9 +10,8 @@
 <form action="update" method="post" name="mvoie" class="form-group">
     ID: <input title="Id" type="number" name="id" value="${movie.id}" hidden/><br/>
 <#if movie.name ??> Name : <input title="Name" type="text" name="name" value="${movie.name}"/><br/></#if>
-<#if movie.genre ??> Genre :<input title="Genre" type="text" name="genre" value="${movie.genre}"/><br/></#if>
 <#if movie.year ??> Year :<input title="Year" type="number" name="year" value="${movie.year}"/><br/></#if>
-<#if movie.genre ??> Price :<input title="Price" type="number" name="price" value="${movie.price}"/><br/></#if>
+<#if movie.price ??> Price :<input title="Price" type="number" step="0.01" name="price" value="${movie.price}"/><br/></#if>
 <#if movie.trailerLink ??> Trailer :<input title="Trailer" type="text" name="trailerLink" value="${movie.trailerLink}"/><br/></#if>
     <input type="submit" title="Update" value="Edit!"/>
 </form>

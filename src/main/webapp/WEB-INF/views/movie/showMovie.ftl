@@ -20,12 +20,6 @@
             <td>Null</td></#if>
         </tr>
         <tr>
-            <td>Genre</td>
-        <#if movie.genre ??>
-            <td>${movie.genre}</td><#else>
-            <td>Null</td></#if>
-        </tr>
-        <tr>
             <td>Year</td>
         <#if movie.year ??>
             <td>${movie.year}</td><#else>
