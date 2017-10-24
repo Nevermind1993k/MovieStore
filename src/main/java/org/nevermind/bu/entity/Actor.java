@@ -12,8 +12,6 @@ public class Actor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    /*@NotNull
-    @Column(nullable = false)*/
     private Date dateOfBirth;
     @OneToMany(fetch = FetchType.EAGER)
     private List<Movie> movieList;

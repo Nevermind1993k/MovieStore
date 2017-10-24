@@ -3,10 +3,13 @@ package org.nevermind.bu.controller;
 import org.nevermind.bu.entity.Actor;
 import org.nevermind.bu.entity.Movie;
 import org.nevermind.bu.service.interfaces.ActorService;
+import org.nevermind.bu.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/actor")
@@ -32,7 +35,12 @@ public class ActorController {
     }
 
     @PostMapping("/newActor")
-    public String createActor(@ModelAttribute Actor actor) {
+    public String createActor(@ModelAttribute Actor actor, Model model) {
+        List<String> errors = Utils.validateActor(actor);
+        if (!errors.isEmpty()) {
+            model.addAttribute("errors", errors);
+            return "createActorForm";
+        }
         actorService.save(actor);
         return "redirect:all";
     }

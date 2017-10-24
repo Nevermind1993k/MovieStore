@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -60,7 +59,7 @@ public class UserController {
 
     @PostMapping("/create")
     public String createUser(@ModelAttribute User user, Model model) {
-        List<String> errors = Utils.validate(user);
+        List<String> errors = Utils.validateUser(user);
         if (!errors.isEmpty()) {
             model.addAttribute("errors", errors);
             return "createUserForm";

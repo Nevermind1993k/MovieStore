@@ -45,8 +45,6 @@
                     <td>${movie.genre}</td><#else>
                     <td>Null</td></#if>-->
             </tr>
-        <#--<#else>-->
-        <#--<h1>Empty movies</h1>-->
         </#list>
 
     </table>

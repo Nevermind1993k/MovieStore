@@ -29,7 +29,7 @@ public class HomeController {
 
     @PostMapping("/create")
     public String createUser(@ModelAttribute User user, Model model) {
-        List<String> errors = Utils.validate(user);
+        List<String> errors = Utils.validateUser(user);
         if (!errors.isEmpty()) {
             model.addAttribute("errors", errors);
             return "createUserForm";
